@@ -54,4 +54,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 ### 401 Advanced Software Development in ASP.NET Core
 
 1. [Code Challenge 1 - Array Reverse](./c-sharp/)
-1. [Code Challenge 2 - Array Shift](./c-sharp/ArrayShift/CodeChallenge2-Whiteboard.pdf)
+1. [Code Challenge 2 - Array Shift](./c-sharp/ArrayShift/assets/array-shift.pdf)
