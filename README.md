@@ -56,4 +56,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 1. [Array Reverse](./c-sharp/)
 1. [Array Shift](./c-sharp/ArrayShift/assets/array-shift.pdf)
 1. [Binary Search](./c-sharp/BinarySearch/assets/binary_search.png)
-1. [Linked List](./c-sharp/LinkedList/assets/README.md)
+1. [Linked List](./c-sharp/LinkedList/README.md)
