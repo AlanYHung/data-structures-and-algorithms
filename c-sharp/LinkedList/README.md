@@ -49,6 +49,11 @@ Create a functioning Linked List with insert, display, and search functionality.
 * 0.7.0 - 1/15/2021 5:00pm - Added delete menu
 * 0.9.0 - 1/15/2021 6:00pm - Added delete function
 * 1.0.0 - 1/15/2021 8:00pm - Finshed creating and running tests.
+* 1.1.0 - 1/18/2021 6:30pm - Added append method
+* 1.2.0 - 1/18/2021 7:00pm - Added insertBefore method
+* 1.3.0 - 1/18/2021 7:30pm - Added insertAfter method
+* 1.4.0 - 1/18/2021 8:00pm - Added new User menu for new add methods
+* 1.5.0 - 1/18/2021 8:30pm - Unit Tests written and ran for new methods
 
 ### Attribution
 * [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/)
