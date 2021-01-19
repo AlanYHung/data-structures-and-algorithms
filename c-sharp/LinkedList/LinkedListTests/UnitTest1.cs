@@ -71,5 +71,45 @@ namespace LinkedListTests
       //string check = "{ Test3 } -> { Test2 } -> { Test1 } -> { Test } -> { Hello } -> NULL";
       //Assert.Equal(check, Program.toString());
     //}
+
+    [Fact]
+    public void Test8()
+    {
+      LinkedList testLinkedList = new LinkedList();
+      testLinkedList.Head = node1;
+      node1.Next = node2;
+      node2.Next = node3;
+      Node current = testLinkedList.Head;
+      testLinkedList.append("7");
+
+      while(current.Next != null)
+      {
+        current = current.Next;
+      }
+
+      Assert.Equal("7", current.Value);
+    }
+
+    [Fact]
+    public void Test9()
+    {
+      LinkedList testLinkedList = new LinkedList();
+      testLinkedList.Head = node1;
+      node1.Next = node2;
+      node2.Next = node3;
+      testLinkedList.insertBefore("Hello", "7");
+      Assert.Equal("7", testLinkedList.Head.Value);
+    }
+
+    [Fact]
+    public void Test10()
+    {
+      LinkedList testLinkedList = new LinkedList();
+      testLinkedList.Head = node1;
+      node1.Next = node2;
+      node2.Next = node3;
+      testLinkedList.insertAfter("Hello", "7");
+      Assert.Equal("7", testLinkedList.Head.Next.Value);
+    }
   }
 }
