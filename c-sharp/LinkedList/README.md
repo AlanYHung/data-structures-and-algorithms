@@ -10,6 +10,11 @@
   * Define a method called toString (or __str__ in Python) which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
     * "{ a } -> { b } -> { c } -> NULL"
 
+### Challenge Summary Part 2
+* Create an append method as part of the LinkedList Class that adds new items to the end of the list.
+* Create an insertBefore method that will search for a list item and insert a new Node before that list item
+* Create an insertAfter method that will search for a list item and insert a new Node after that list item
+
 ### Challenge Description
 Create a functioning Linked List with insert, display, and search functionality.
 
@@ -22,6 +27,11 @@ Create a functioning Linked List with insert, display, and search functionality.
   * Efficiency: O(n)
 * __toString__ create a pointer to traverse the list and pull out the value.  Then append to string. Return the string.
   * Efficiency: O(n)
+
+### Solution
+* [Append - Whiteboard](./assets/append.png)
+* [insertBefore - Whiteboard](./assets/insert_before.png)
+* [insertAfter - Whiteboard](./assets/CodeChallenge06-insertafter.pdf)
 
 ### Example
 * ![](./assets/LinkedList1.PNG)
