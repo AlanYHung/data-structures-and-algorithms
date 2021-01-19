@@ -21,7 +21,7 @@ namespace DataStructures
         switch (userInput)
         {
           case "1":
-            addToList();
+            methodOfAdd();
             Console.Clear();
             break;
           case "2":
@@ -133,6 +133,87 @@ namespace DataStructures
           Console.Clear();
         } while (userInput != "n" && userInput != "y");
       } while (userInput != "n");
+    }
+
+    // Shows user current list and gets the location of item to insert before or after and new item to insert
+    static void insertBeforeOrAfter(string userChoice)
+    {
+      string listValue;
+      string newValue;
+
+      Console.WriteLine(toString());
+      Console.Write("\nPlease choose a value to insert your item {0}: ", userChoice);
+      listValue = Console.ReadLine();
+      Console.Write("Please choose a value to insert: ");
+      newValue = Console.ReadLine();
+
+      switch (userChoice)
+      {
+        case "before":
+          try
+          {
+            myLinkedList.insertBefore(listValue, newValue);
+          }
+          catch(Exception e)
+          {
+            Console.WriteLine("\n\n{0}",e);
+            pauseScreen();
+          }
+          break;
+        case "after":
+          try
+          {
+            myLinkedList.insertAfter(listValue, newValue);
+          }
+          catch (Exception e)
+          {
+            Console.WriteLine("\n\n{0}", e);
+            pauseScreen();
+          }
+          break;
+        default:
+          break;
+      }
+    }
+
+    // Allows user to choose add method
+    static void methodOfAdd()
+    {
+      string userInput;
+
+      Console.WriteLine("Please choose how you would like to add to the list: ");
+      Console.WriteLine("\n\n1. Insert new item to beginning of the list");
+      Console.WriteLine("2. Append to the end of the list");
+      Console.WriteLine("3. Insert new list time before existing list item");
+      Console.WriteLine("4. Insert new list time after existing list item");
+      Console.WriteLine("5. Exit");
+      Console.Write("\n\nPlease choose a number between 1-5: ");
+      userInput = Console.ReadLine();
+      Console.Clear();
+
+      switch (userInput)
+      {
+        case "1":
+          addToList();
+          break;
+        case "2":
+          Console.WriteLine("What item would you like to add to the end of the list?");
+          userInput = Console.ReadLine();
+          myLinkedList.append(userInput);
+          break;
+        case "3":
+          insertBeforeOrAfter("before");
+          break;
+        case "4":
+          insertBeforeOrAfter("after"); 
+          break;
+        case "5":
+          break;
+        default:
+          Console.WriteLine("Invalid Choice.  Need to choose a number between 1 and 5.");
+          pauseScreen();
+          break;
+      }
     }
 
     // Removes a node from the Linked List
