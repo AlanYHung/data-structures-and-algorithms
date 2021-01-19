@@ -12,18 +12,19 @@ namespace LinkedListTests
     Node node3 = new Node("!!!!");
 
     [Fact]
-    public void Test1()
+    public void LinkedListInitializationTest()
     {
+      // Tests that the linked list can be successfully initialized
       LinkedList testLinkedList = new LinkedList();
-
       Assert.True(testLinkedList.Head == null);
     }
 
     [Fact]
-    public void Test2()
+    public void InsertTest()
     {
+      // Tests that the insert function adds values to beginning of the list
       Program.myLinkedList.Head = node1;
-      Program.insert("Test");
+      Program.myLinkedList.insert("Test");
       Assert.Equal("Test", Program.myLinkedList.Head.Value);
     }
 
@@ -40,9 +41,9 @@ namespace LinkedListTests
     [Fact]
     public void Test4()
     {
-      Program.insert("Test1");
-      Program.insert("Test2");
-      Program.insert("Test3");
+      Program.myLinkedList.insert("Test1");
+      Program.myLinkedList.insert("Test2");
+      Program.myLinkedList.insert("Test3");
 
       Assert.Equal("Test3", Program.myLinkedList.Head.Value);
       Assert.Equal("Test2", Program.myLinkedList.Head.Next.Value);
@@ -55,13 +56,13 @@ namespace LinkedListTests
     [Fact]
     public void Test5()
     {
-      Assert.True(Program.includes("Hello"));
+      Assert.True(Program.myLinkedList.includes("Hello"));
     }
 
     [Fact]
     public void Test6()
     {
-      Assert.False(Program.includes("Boy"));
+      Assert.False(Program.myLinkedList.includes("Boy"));
     }
 
     //[Fact]

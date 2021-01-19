@@ -41,7 +41,7 @@ namespace DataStructures
             pauseScreen();
             break;
           case "4":
-            Console.WriteLine(toString());
+            Console.WriteLine(myLinkedList.toString());
             pauseScreen();
             break;
           case "5":
@@ -63,13 +63,13 @@ namespace DataStructures
         switch (i)
         {
           case 0:
-            insert("!!!");
+            myLinkedList.insert("!!!");
             break;
           case 1:
-            insert("World");
+            myLinkedList.insert("World");
             break;
           case 2:
-            insert("Hello");
+            myLinkedList.insert("Hello");
             break;
         }
       }
@@ -100,14 +100,6 @@ namespace DataStructures
       return userInput;
     }
 
-    // Add items to the beginning of the linked list
-    public static void insert(string nodeVal)
-    {
-      Node newNode = new Node(nodeVal);
-      newNode.Next = myLinkedList.Head;
-      myLinkedList.Head = newNode;
-    }
-
     // Gets user input value for insert function
     static void addToList()
     {
@@ -117,7 +109,7 @@ namespace DataStructures
       {
         Console.Write("Add a value to the linked list: ");
         userInput = Console.ReadLine();
-        insert(userInput);
+        myLinkedList.insert(userInput);
 
         do
         {
@@ -141,7 +133,7 @@ namespace DataStructures
       string listValue;
       string newValue;
 
-      Console.WriteLine(toString());
+      Console.WriteLine(myLinkedList.toString());
       Console.Write("\nPlease choose a value to insert your item {0}: ", userChoice);
       listValue = Console.ReadLine();
       Console.Write("Please choose a value to insert: ");
@@ -216,29 +208,6 @@ namespace DataStructures
       }
     }
 
-    // Removes a node from the Linked List
-    static void delete(int position)
-    {
-      Node current = myLinkedList.Head;
-      Node previous = current;
-
-      if(position == 0)
-      {
-        myLinkedList.Head = myLinkedList.Head.Next;
-      }
-      else
-      {
-        for(int i = 0; i < position; i++)
-        {
-          previous = current;
-          current = current.Next;
-        }
-
-        previous.Next = current.Next;
-        current.Next = null;
-      }
-    }
-
     // Gets user input for removing from Linked List
     static void removeFromList()
     {
@@ -270,13 +239,13 @@ namespace DataStructures
           }
           else
           {
-            delete(userInputConverted - 1);
+            myLinkedList.delete(userInputConverted - 1);
           }
         }
         catch (Exception e)
         {
           Console.Clear();
-          Console.WriteLine("Please enter a number.");
+          Console.WriteLine("Please enter a number.\n\n{0}", e);
           pauseScreen();
         }
       }
@@ -288,57 +257,13 @@ namespace DataStructures
       }
     }
 
-    // Checks to see if a value exists in the list.  (Case Sensitive)
-    public static bool includes(string nodeVal)
-    {
-      Node current = myLinkedList.Head;
-
-      while (current != null)
-      {
-        if(current.Value == nodeVal)
-        {
-          return true;
-        }
-
-        current = current.Next;
-      }
-
-      return false;
-    }
-
     // Gets user value for checking if value exists in List
     static bool checkExists()
     {
       string userInput;
       Console.WriteLine("What value would like to check for? (Note: Case Sensitive)");
       userInput = Console.ReadLine();
-      return includes(userInput);
-    }
-
-    // Displays all the items in the List
-    public static string toString()
-    {
-      Node current = myLinkedList.Head;
-      char openBrace = '{';
-      char closeBrace = '}';
-      string returnString = "";
-      Console.Clear();
-
-      while(current != null)
-      {
-        if(current.Next == null)
-        {
-          returnString += $"{openBrace} {current.Value} {closeBrace} -> NULL";
-        }
-        else
-        {
-          returnString += $"{openBrace} {current.Value} {closeBrace} -> ";
-        }
-
-        current = current.Next;
-      }
-
-      return returnString;
+      return myLinkedList.includes(userInput);
     }
   }
 }
