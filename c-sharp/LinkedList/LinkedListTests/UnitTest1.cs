@@ -24,7 +24,7 @@ namespace LinkedListTests
     {
       // Tests that the insert function adds values to beginning of the list
       Program.myLinkedList.Head = node1;
-      Program.myLinkedList.insert("Test");
+      Program.myLinkedList.Insert("Test");
       Assert.Equal("Test", Program.myLinkedList.Head.Value);
     }
 
@@ -43,30 +43,32 @@ namespace LinkedListTests
     public void MultipleInsertTest()
     {
       // Tests that insert always adds to the front of the list
-      Program.myLinkedList.insert("Test1");
-      Program.myLinkedList.insert("Test2");
-      Program.myLinkedList.insert("Test3");
+      Program.myLinkedList.Insert("Test1");
+      Program.myLinkedList.Insert("Test2");
+      Program.myLinkedList.Insert("Test3");
 
       Assert.Equal("Test3", Program.myLinkedList.Head.Value);
       Assert.Equal("Test2", Program.myLinkedList.Head.Next.Value);
       Assert.Equal("Test1", Program.myLinkedList.Head.Next.Next.Value);
-      Assert.Equal("Test", Program.myLinkedList.Head.Next.Next.Next.Value);
-      Assert.Equal("Hello", Program.myLinkedList.Head.Next.Next.Next.Next.Value);
-      Assert.Null(Program.myLinkedList.Head.Next.Next.Next.Next.Next);
+      Assert.Null(Program.myLinkedList.Head.Next.Next.Next);
     }
 
     [Fact]
     public void IncludesFoundTest()
     {
+      LinkedList includesTest = new LinkedList();
+      includesTest.Head = node1;
       // Tests that the includes method finds items correctly
-      Assert.True(Program.myLinkedList.includes("Hello"));
+      Assert.True(includesTest.Includes("Hello"));
     }
 
     [Fact]
     public void IncludesNotFoundTest()
     {
+      LinkedList includesTest = new LinkedList();
+      includesTest.Head = node1;
       // Tests that the includes method deals with not found items correctly
-      Assert.False(Program.myLinkedList.includes("Boy"));
+      Assert.False(Program.myLinkedList.Includes("Boy"));
     }
 
     [Fact]
@@ -75,7 +77,7 @@ namespace LinkedListTests
       // Tests that the ToString method returns the correct output
       Program.myLinkedList.Head = node1;
       string check = "{ Hello } -> NULL";
-      Assert.Equal(check, Program.myLinkedList.toString());
+      Assert.Equal(check, Program.myLinkedList.ToString());
     }
 
     [Fact]
@@ -87,7 +89,7 @@ namespace LinkedListTests
       node1.Next = node2;
       node2.Next = node3;
       Node current = testLinkedList.Head;
-      testLinkedList.append("7");
+      testLinkedList.Append("7");
 
       while(current.Next != null)
       {
@@ -98,25 +100,50 @@ namespace LinkedListTests
     }
 
     [Fact]
-    public void Test9()
+    public void AddToListBeforePosition()
     {
+      // Tests that the list correctly adds to the list before chosen list item
       LinkedList testLinkedList = new LinkedList();
       testLinkedList.Head = node1;
       node1.Next = node2;
       node2.Next = node3;
-      testLinkedList.insertBefore("Hello", "7");
+      testLinkedList.InsertBefore("Hello", "7");
       Assert.Equal("7", testLinkedList.Head.Value);
     }
 
     [Fact]
-    public void Test10()
+    public void AddToListAfterPosition()
     {
+      // Tests that the list correctly adds to the list after chosen list item
       LinkedList testLinkedList = new LinkedList();
       testLinkedList.Head = node1;
       node1.Next = node2;
       node2.Next = node3;
-      testLinkedList.insertAfter("Hello", "7");
+      testLinkedList.InsertAfter("Hello", "7");
       Assert.Equal("7", testLinkedList.Head.Next.Value);
+    }
+
+    [Fact]
+    public void LinkedListLengthTrackingTest()
+    {
+      // Tests that the Length tracks correctly when Nodes are added
+      LinkedList testLinkedList = new LinkedList();
+      testLinkedList.Append("10");
+      testLinkedList.Insert("1");
+      testLinkedList.InsertBefore("10", "3");
+      testLinkedList.InsertAfter("3", "6");
+      Assert.Equal(4, testLinkedList.Length);
+    }
+
+    [Fact]
+    public void LinkedListKthFromEndTest()
+    {
+      LinkedList testLinkedList = new LinkedList();
+      testLinkedList.Append("10");
+      testLinkedList.Insert("1");
+      testLinkedList.InsertBefore("10", "3");
+      testLinkedList.InsertAfter("3", "6");
+      Assert.Equal("3", testLinkedList.KthFromEnd(2));
     }
   }
 }

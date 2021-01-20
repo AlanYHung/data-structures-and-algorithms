@@ -30,8 +30,9 @@ Create a functioning Linked List with insert, display, and search functionality.
 
 ### Solution
 * [Append - Whiteboard](./assets/append.png)
-* [insertBefore - Whiteboard](./assets/insert_before.png)
-* [insertAfter - Whiteboard](./assets/CodeChallenge06-insertafter.pdf)
+* [InsertBefore - Whiteboard](./assets/insert_before.png)
+* [InsertAfter - Whiteboard](./assets/CodeChallenge06-insertafter.pdf)
+* [KthFromEnd - Whiteboard](./assets/kthfromend.pdf)
 
 ### Example
 * ![](./assets/LinkedList1.PNG)
@@ -54,6 +55,9 @@ Create a functioning Linked List with insert, display, and search functionality.
 * 1.3.0 - 1/18/2021 7:30pm - Added insertAfter method
 * 1.4.0 - 1/18/2021 8:00pm - Added new User menu for new add methods
 * 1.5.0 - 1/18/2021 8:30pm - Unit Tests written and ran for new methods
+* 1.6.0 - 1/19/2021 8:30pm - Implemented New Length Property and added tracking functionality to all Add methods
+* 1.7.0 - 1/19/2021 9:00pm - Added User Interface Input and Output with Exception handling for new method
+* 1.8.0 - 1/19/2021 9:30pm - Unit Tests written and ran for new method
 
 ### Attribution
 * [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/)
