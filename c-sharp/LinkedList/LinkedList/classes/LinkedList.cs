@@ -47,7 +47,6 @@ namespace DataStructures
       char openBrace = '{';
       char closeBrace = '}';
       string returnString = "";
-      Console.Clear();
 
       while (current != null)
       {

@@ -29,8 +29,9 @@ namespace LinkedListTests
     }
 
     [Fact]
-    public void Test3()
+    public void CheckHeadIsAlwaysFirstNodeTest()
     {
+      // Tests to make sure Head always points to first item in list
       Program.myLinkedList.Head = node1;
       node1.Next = node2;
       node2.Next = node3;
@@ -39,8 +40,9 @@ namespace LinkedListTests
     }
 
     [Fact]
-    public void Test4()
+    public void MultipleInsertTest()
     {
+      // Tests that insert always adds to the front of the list
       Program.myLinkedList.insert("Test1");
       Program.myLinkedList.insert("Test2");
       Program.myLinkedList.insert("Test3");
@@ -54,28 +56,32 @@ namespace LinkedListTests
     }
 
     [Fact]
-    public void Test5()
+    public void IncludesFoundTest()
     {
+      // Tests that the includes method finds items correctly
       Assert.True(Program.myLinkedList.includes("Hello"));
     }
 
     [Fact]
-    public void Test6()
+    public void IncludesNotFoundTest()
     {
+      // Tests that the includes method deals with not found items correctly
       Assert.False(Program.myLinkedList.includes("Boy"));
     }
 
-    //[Fact]
-    //public void Test7()
-    //{
-      //Program.myLinkedList.Head = node1;
-      //string check = "{ Test3 } -> { Test2 } -> { Test1 } -> { Test } -> { Hello } -> NULL";
-      //Assert.Equal(check, Program.toString());
-    //}
+    [Fact]
+    public void ToStringDisplayTest()
+    {
+      // Tests that the ToString method returns the correct output
+      Program.myLinkedList.Head = node1;
+      string check = "{ Hello } -> NULL";
+      Assert.Equal(check, Program.myLinkedList.toString());
+    }
 
     [Fact]
-    public void Test8()
+    public void AppendAddsToTheEndTest()
     {
+      // Tests that the append method correctly adds items to the end of the list
       LinkedList testLinkedList = new LinkedList();
       testLinkedList.Head = node1;
       node1.Next = node2;
