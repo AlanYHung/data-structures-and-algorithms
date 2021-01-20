@@ -41,10 +41,14 @@ namespace DataStructures
             pauseScreen();
             break;
           case "4":
-            Console.WriteLine(myLinkedList.toString());
-            pauseScreen();
+            Console.Clear();
+            getKthFromEnd();
             break;
           case "5":
+            Console.WriteLine(myLinkedList.ToString());
+            pauseScreen();
+            break;
+          case "6":
             Console.WriteLine("Have a nice day!");
             break;
           default:
@@ -52,7 +56,7 @@ namespace DataStructures
             pauseScreen();
             break;
         }
-      } while (userInput != "5");
+      } while (userInput != "6");
     }
 
     // Creates a default list
@@ -63,13 +67,13 @@ namespace DataStructures
         switch (i)
         {
           case 0:
-            myLinkedList.insert("!!!");
+            myLinkedList.Insert("!!!");
             break;
           case 1:
-            myLinkedList.insert("World");
+            myLinkedList.Insert("World");
             break;
           case 2:
-            myLinkedList.insert("Hello");
+            myLinkedList.Insert("Hello");
             break;
         }
       }
@@ -91,9 +95,10 @@ namespace DataStructures
       Console.WriteLine("1. Add item to List");
       Console.WriteLine("2. Remove item to List");
       Console.WriteLine("3. Check to see if item is in List");
-      Console.WriteLine("4. Display List");
-      Console.WriteLine("5. Exit");
-      Console.Write("\n\nPlease choose a number (1-5): ");
+      Console.WriteLine("4. Get the kth item from the end of the list");
+      Console.WriteLine("5. Display List");
+      Console.WriteLine("6. Exit");
+      Console.Write("\n\nPlease choose a number (1-6): ");
       userInput = Console.ReadLine();
       Console.Clear();
 
@@ -109,7 +114,7 @@ namespace DataStructures
       {
         Console.Write("Add a value to the linked list: ");
         userInput = Console.ReadLine();
-        myLinkedList.insert(userInput);
+        myLinkedList.Insert(userInput);
 
         do
         {
@@ -133,7 +138,7 @@ namespace DataStructures
       string listValue;
       string newValue;
 
-      Console.WriteLine(myLinkedList.toString());
+      Console.WriteLine(myLinkedList.ToString());
       Console.Write("\nPlease choose a value to insert your item {0}: ", userChoice);
       listValue = Console.ReadLine();
       Console.Write("Please choose a value to insert: ");
@@ -144,7 +149,7 @@ namespace DataStructures
         case "before":
           try
           {
-            myLinkedList.insertBefore(listValue, newValue);
+            myLinkedList.InsertBefore(listValue, newValue);
           }
           catch(Exception e)
           {
@@ -155,7 +160,7 @@ namespace DataStructures
         case "after":
           try
           {
-            myLinkedList.insertAfter(listValue, newValue);
+            myLinkedList.InsertAfter(listValue, newValue);
           }
           catch (Exception e)
           {
@@ -191,7 +196,7 @@ namespace DataStructures
         case "2":
           Console.WriteLine("What item would you like to add to the end of the list?");
           userInput = Console.ReadLine();
-          myLinkedList.append(userInput);
+          myLinkedList.Append(userInput);
           break;
         case "3":
           insertBeforeOrAfter("before");
@@ -239,7 +244,7 @@ namespace DataStructures
           }
           else
           {
-            myLinkedList.delete(userInputConverted - 1);
+            myLinkedList.Delete(userInputConverted - 1);
           }
         }
         catch (Exception e)
@@ -263,7 +268,34 @@ namespace DataStructures
       string userInput;
       Console.WriteLine("What value would like to check for? (Note: Case Sensitive)");
       userInput = Console.ReadLine();
-      return myLinkedList.includes(userInput);
+      return myLinkedList.Includes(userInput);
+    }
+
+    static void getKthFromEnd()
+    {
+      string userInput;
+      int userInputInt;
+
+      try
+      {
+        Console.WriteLine(myLinkedList.ToString());
+        Console.WriteLine("Length: {0}", myLinkedList.Length);
+        Console.Write("\nPlease enter a number between (1-{0}): ", myLinkedList.Length - 1);
+        userInput = Console.ReadLine();
+        userInputInt = Convert.ToInt32(userInput);
+        Console.WriteLine("The item at position {0} in the List is: {1}", myLinkedList.Length - userInputInt, myLinkedList.KthFromEnd(userInputInt));
+        pauseScreen();
+      }
+      catch (FormatException fe)
+      {
+        Console.WriteLine("\n\n{0}",fe);
+        pauseScreen();
+      }
+      catch (Exception e)
+      {
+        Console.WriteLine("\n\n{0}", e);
+        pauseScreen();
+      }
     }
   }
 }
