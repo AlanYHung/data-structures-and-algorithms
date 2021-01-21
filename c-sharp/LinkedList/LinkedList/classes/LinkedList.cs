@@ -198,10 +198,11 @@ namespace DataStructures
     {
       Node listACurrent = listA.Head;
       Node listBCurrent = listB.Head;
-      Node listANextCurrent = listA.Head.Next;
+      Node listANextCurrent = listA.Head;
 
       while(listANextCurrent != null || listBCurrent != null)
       {
+        listANextCurrent = listA.Head.Next;
         if (listANextCurrent == null && listBCurrent != null)
         {
           listACurrent.Next = listBCurrent;

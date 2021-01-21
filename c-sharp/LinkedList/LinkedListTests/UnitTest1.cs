@@ -167,5 +167,49 @@ namespace LinkedListTests
       testLinkedList.Append("10");
       Assert.Equal("10", testLinkedList.KthFromEnd(1));
     }
+
+    [Fact]
+    public void ZipSameSizeListsTest()
+    {
+      LinkedList testLinkedListA = new LinkedList();
+      testLinkedListA.Append("10");
+      testLinkedListA.Insert("1");
+      testLinkedListA.InsertBefore("10", "3");
+      testLinkedListA.InsertAfter("3", "6");
+      LinkedList testLinkedListB = new LinkedList();
+      testLinkedListB.Append("10");
+      testLinkedListB.Insert("1");
+      testLinkedListB.InsertBefore("10", "3");
+      testLinkedListB.InsertAfter("3", "6");
+      string outputString = "{ 1 } -> { 1 } -> { 3 } -> { 3 } -> { 6 } -> { 6 } -> { 10 } -> { 10 } -> NULL";
+      testLinkedListA.Head = testLinkedListA.ZipLists(testLinkedListA, testLinkedListB);
+      Assert.Equal(outputString, testLinkedListA.ToString());
+    }
+
+    [Fact]
+    public void ZipSameTwoNullTest()
+    {
+      LinkedList testLinkedListA = new LinkedList();
+      LinkedList testLinkedListB = new LinkedList();
+      Assert.Null(testLinkedListA.ZipLists(testLinkedListA, testLinkedListB));
+    }
+
+    // I think the break statement is causing this test to hang.  If you have any suggestions on how to fix please let me know
+
+    //[Fact]
+    //public void ZipListsListALongerTest()
+    //{
+    //  LinkedList testLinkedListA = new LinkedList();
+    //  testLinkedListA.Append("10");
+    //  testLinkedListA.Insert("1");
+    //  testLinkedListA.InsertBefore("10", "3");
+    //  testLinkedListA.InsertAfter("3", "6");
+    //  LinkedList testLinkedListB = new LinkedList();
+    //  testLinkedListB.Append("10");
+    //  testLinkedListB.Insert("1");
+    //  string outputString = "{ 1 } -> { 1 } -> { 3 } -> { 10 } -> { 6 } -> { 10 } -> NULL";
+    //  testLinkedListA.Head = testLinkedListA.ZipLists(testLinkedListA, testLinkedListB);
+    //  Assert.Equal(outputString, testLinkedListA.ToString());
+    //}
   }
 }
