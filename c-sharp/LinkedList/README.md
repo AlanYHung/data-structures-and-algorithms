@@ -11,9 +11,11 @@
     * "{ a } -> { b } -> { c } -> NULL"
 
 ### Challenge Summary Part 2
-* Create an append method as part of the LinkedList Class that adds new items to the end of the list.
-* Create an insertBefore method that will search for a list item and insert a new Node before that list item
-* Create an insertAfter method that will search for a list item and insert a new Node after that list item
+* Create an Append method as part of the LinkedList Class that adds new items to the end of the list.
+* Create an InsertBefore method that will search for a list item and insert a new Node before that list item
+* Create an InsertAfter method that will search for a list item and insert a new Node after that list item
+* Create a KthFromEnd method that will take an int k and return the node value that is k spaces away from the end
+* Create a ZipList method that will take in 2 lists and merge them via alternating nodes from each list
 
 ### Challenge Description
 Create a functioning Linked List with insert, display, and search functionality.
@@ -33,6 +35,7 @@ Create a functioning Linked List with insert, display, and search functionality.
 * [InsertBefore - Whiteboard](./assets/insert_before.png)
 * [InsertAfter - Whiteboard](./assets/CodeChallenge06-insertafter.pdf)
 * [KthFromEnd - Whiteboard](./assets/kthfromend.pdf)
+* [ZipList - Whiteboard](./assets/ZipList.PNG)
 
 ### Example
 * ![](./assets/LinkedList1.PNG)

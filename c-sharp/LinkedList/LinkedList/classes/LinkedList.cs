@@ -193,6 +193,39 @@ namespace DataStructures
       }
     }
 
+    // Merges 2 Linked Lists by adding them via alternating nodes from each list
+    public Node ZipLists(LinkedList listA, LinkedList listB)
+    {
+      Node listACurrent = listA.Head;
+      Node listBCurrent = listB.Head;
+      Node listANextCurrent = listA.Head.Next;
+
+      while(listANextCurrent != null && listBCurrent != null)
+      {
+        if(listANextCurrent == null && listBCurrent != null)
+        {
+          listACurrent.Next = listBCurrent;
+          break;
+        }
+
+        if (listANextCurrent != null && listBCurrent == null)
+        {
+          listACurrent.Next = listACurrent;
+          break;
+        }
+
+        listACurrent.Next = listBCurrent;
+        listBCurrent = listBCurrent.Next;
+        listACurrent = listACurrent.Next;
+
+        listACurrent.Next = listANextCurrent;
+        listANextCurrent = listANextCurrent.Next;
+        listACurrent = listACurrent.Next;
+      }
+
+      return listA.Head;
+    }
+
     // Removes a node from the Linked List
     public void Delete(int position)
     {
