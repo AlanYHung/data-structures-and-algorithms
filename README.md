@@ -61,4 +61,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
   * [Linked List - InsertBefore](./c-sharp/LinkedList/assets/insert_before.png)
   * [Linked List - InsertAfter](./c-sharp/LinkedList/assets/CodeChallenge06-insertafter.pdf)
   * [Linked List - KthFromEnd](./c-sharp/LinkedList/assets/kthfromend.pdf)
-  * [Linked List - KthFromEnd](./c-sharp/LinkedList/assets/zipList.PNG)
+  * [Linked List - ZipList](./c-sharp/LinkedList/assets/zipList.PNG)
