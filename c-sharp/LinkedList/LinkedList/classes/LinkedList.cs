@@ -178,7 +178,7 @@ namespace DataStructures
       int positionInList = Length - k - 1;
       Node current = Head;
 
-      if (k > -1 && Head != null && Length > k)
+      if (k > -1 && Head != null && Length >= k)
       {
         for(int i = 0; i < positionInList; i++)
         {
@@ -191,6 +191,40 @@ namespace DataStructures
       {
         throw new IndexOutOfRangeException("The value given was greater than the Length of the List or less than zero, or the list is empty.");
       }
+    }
+
+    // Merges 2 Linked Lists by adding them via alternating nodes from each list
+    public Node ZipLists(LinkedList listA, LinkedList listB)
+    {
+      Node listACurrent = listA.Head;
+      Node listBCurrent = listB.Head;
+      Node listANextCurrent = listA.Head;
+
+      while(listANextCurrent != null || listBCurrent != null)
+      {
+        listANextCurrent = listA.Head.Next;
+        if (listANextCurrent == null && listBCurrent != null)
+        {
+          listACurrent.Next = listBCurrent;
+          break;
+        }
+
+        if (listANextCurrent != null && listBCurrent == null)
+        {
+          listACurrent.Next = listACurrent;
+          break;
+        }
+
+        listACurrent.Next = listBCurrent;
+        listBCurrent = listBCurrent.Next;
+        listACurrent = listACurrent.Next;
+
+        listACurrent.Next = listANextCurrent;
+        listANextCurrent = listANextCurrent.Next;
+        listACurrent = listACurrent.Next;
+      }
+
+      return listA.Head;
     }
 
     // Removes a node from the Linked List

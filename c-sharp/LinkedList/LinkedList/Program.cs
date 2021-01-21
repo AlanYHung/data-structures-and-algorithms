@@ -45,10 +45,21 @@ namespace DataStructures
             getKthFromEnd();
             break;
           case "5":
-            Console.WriteLine(myLinkedList.ToString());
+            LinkedList newList = new LinkedList();
+            Node node1 = new Node("*");
+            Node node2 = new Node("+");
+            Node node3 = new Node("-");
+            newList.Head = node1;
+            node1.Next = node2;
+            node2.Next = node3;
+            myLinkedList.Head = myLinkedList.ZipLists(myLinkedList, newList);
             pauseScreen();
             break;
           case "6":
+            Console.WriteLine(myLinkedList.ToString());
+            pauseScreen();
+            break;
+          case "7":
             Console.WriteLine("Have a nice day!");
             break;
           default:
@@ -56,7 +67,7 @@ namespace DataStructures
             pauseScreen();
             break;
         }
-      } while (userInput != "6");
+      } while (userInput != "7");
     }
 
     // Creates a default list
@@ -96,9 +107,10 @@ namespace DataStructures
       Console.WriteLine("2. Remove item to List");
       Console.WriteLine("3. Check to see if item is in List");
       Console.WriteLine("4. Get the kth item from the end of the list");
-      Console.WriteLine("5. Display List");
-      Console.WriteLine("6. Exit");
-      Console.Write("\n\nPlease choose a number (1-6): ");
+      Console.WriteLine("5. Zip 2 Linked Lists together");
+      Console.WriteLine("6. Display List");
+      Console.WriteLine("7. Exit");
+      Console.Write("\n\nPlease choose a number (1-7): ");
       userInput = Console.ReadLine();
       Console.Clear();
 
