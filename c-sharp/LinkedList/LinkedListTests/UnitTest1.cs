@@ -145,5 +145,27 @@ namespace LinkedListTests
       testLinkedList.InsertAfter("3", "6");
       Assert.Equal("3", testLinkedList.KthFromEnd(2));
     }
+
+    [Theory]
+    [InlineData(10)]
+    [InlineData(4)]
+    [InlineData(-1)]
+    public void KthFromEndIndexOutOfRangeTest(int k)
+    {
+      LinkedList testLinkedList = new LinkedList();
+      testLinkedList.Append("10");
+      testLinkedList.Insert("1");
+      testLinkedList.InsertBefore("10", "3");
+      testLinkedList.InsertAfter("3", "6");
+      Assert.Throws<IndexOutOfRangeException>(() => testLinkedList.KthFromEnd(k));
+    }
+
+    [Fact]
+    public void LinkedListKthFromEndSizeOfOneTest()
+    {
+      LinkedList testLinkedList = new LinkedList();
+      testLinkedList.Append("10");
+      Assert.Equal("10", testLinkedList.KthFromEnd(1));
+    }
   }
 }

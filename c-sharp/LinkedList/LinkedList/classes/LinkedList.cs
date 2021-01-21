@@ -178,7 +178,7 @@ namespace DataStructures
       int positionInList = Length - k - 1;
       Node current = Head;
 
-      if (k > -1 && Head != null && Length > k)
+      if (k > -1 && Head != null && Length >= k)
       {
         for(int i = 0; i < positionInList; i++)
         {
@@ -200,9 +200,9 @@ namespace DataStructures
       Node listBCurrent = listB.Head;
       Node listANextCurrent = listA.Head.Next;
 
-      while(listANextCurrent != null && listBCurrent != null)
+      while(listANextCurrent != null || listBCurrent != null)
       {
-        if(listANextCurrent == null && listBCurrent != null)
+        if (listANextCurrent == null && listBCurrent != null)
         {
           listACurrent.Next = listBCurrent;
           break;
