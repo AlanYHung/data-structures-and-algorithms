@@ -4,13 +4,13 @@ using System.Text;
 
 namespace DataStructures
 {
-  public class Node
+  public class Node<T>
   {
-    public string Value { get; set; }
-    public Node Next { get; set; }
+    public T Value { get; set; }
+    public Node<T> Next { get; set; }
 
     // Constructor
-    public Node(string nodeVal)
+    public Node(T nodeVal)
     {
       Value = nodeVal;
       Next = null;

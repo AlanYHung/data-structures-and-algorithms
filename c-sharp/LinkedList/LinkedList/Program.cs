@@ -5,7 +5,7 @@ namespace DataStructures
   public class Program
   {
     // Global declaration for empty Linked List.
-    public static LinkedList myLinkedList = new LinkedList();
+    public static LinkedList<string> myLinkedList = new LinkedList<string>();
 
     // Control for LinkedList Program
     static void Main(string[] args)
@@ -45,10 +45,10 @@ namespace DataStructures
             getKthFromEnd();
             break;
           case "5":
-            LinkedList newList = new LinkedList();
-            Node node1 = new Node("*");
-            Node node2 = new Node("+");
-            Node node3 = new Node("-");
+            LinkedList<string> newList = new LinkedList<string>();
+            Node<string> node1 = new Node<string>("*");
+            Node<string> node2 = new Node<string>("+");
+            Node<string> node3 = new Node<string>("-");
             newList.Head = node1;
             node1.Next = node2;
             node2.Next = node3;
@@ -73,21 +73,9 @@ namespace DataStructures
     // Creates a default list
     static void populateList()
     {
-      for (int i = 0; i < 3; i++)
-      {
-        switch (i)
-        {
-          case 0:
-            myLinkedList.Insert("!!!");
-            break;
-          case 1:
-            myLinkedList.Insert("World");
-            break;
-          case 2:
-            myLinkedList.Insert("Hello");
-            break;
-        }
-      }
+      myLinkedList.Insert("!!!");
+      myLinkedList.Insert("World");
+      myLinkedList.Insert("Hello");
     }
 
     // Pause Screen so user can see output
@@ -228,7 +216,7 @@ namespace DataStructures
     // Gets user input for removing from Linked List
     static void removeFromList()
     {
-      Node current = myLinkedList.Head;
+      Node<string> current = myLinkedList.Head;
       int nodeCount = 0;
       string userInput;
       int userInputConverted;
