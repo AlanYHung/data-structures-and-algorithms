@@ -4,9 +4,9 @@ using System.Text;
 
 namespace DataStructures
 {
-  public class LinkedList
+  public class LinkedList<T>
   {
-    public Node Head { get; set; }
+    public Node<T> Head { get; set; }
 
     // If using a Method from LinkedList class to add then do not increment this variable
     // Manually adding items to the LinkedList is not recommended
@@ -21,22 +21,22 @@ namespace DataStructures
     }
 
     // Add items to the beginning of the linked list
-    public void Insert(string nodeVal)
+    public void Insert(T nodeVal)
     {
-      Node newNode = new Node(nodeVal);
+      Node<T> newNode = new Node<T>(nodeVal);
       newNode.Next = Head;
       Head = newNode;
       Length++;
     }
 
     // Checks to see if a value exists in the list.  (Case Sensitive)
-    public bool Includes(string nodeVal)
+    public bool Includes(T nodeVal)
     {
-      Node current = Head;
-
+      Node<T> current = Head;
+      
       while (current != null)
       {
-        if (current.Value == nodeVal)
+        if (current.Value.Equals(nodeVal))
         {
           return true;
         }
@@ -50,7 +50,7 @@ namespace DataStructures
     // Displays all the items in the List
     public override string ToString()
     {
-      Node current = Head;
+      Node<T> current = Head;
       char openBrace = '{';
       char closeBrace = '}';
       string returnString = "";
@@ -73,10 +73,10 @@ namespace DataStructures
     }
     
     // Add a new Node to the end of the list
-    public void Append(string insertValue)
+    public void Append(T insertValue)
     {
-      Node current = Head;
-      Node insertNode = new Node(insertValue);
+      Node<T> current = Head;
+      Node<T> insertNode = new Node<T>(insertValue);
 
       if(current == null)
       {
@@ -100,16 +100,16 @@ namespace DataStructures
     }
 
     // Insert a new item into the list before an existing chosen value
-    public void InsertBefore(string value, string newValue)
+    public void InsertBefore(T value, T newValue)
     {
-      Node current = Head;
-      Node insertNode = new Node(newValue);
+      Node<T> current = Head;
+      Node<T> insertNode = new Node<T>(newValue);
 
       if(current == null)
       {
         throw new Exception("List is Empty.  New Node not added to list.");
       }
-      else if(current.Value == value)
+      else if(current.Value.Equals(value))
       {
         insertNode.Next = current;
         Head = insertNode;
@@ -124,7 +124,7 @@ namespace DataStructures
               throw new Exception("Item not found.  New Node not added to list.");
           }
 
-          if (current.Next.Value == value)
+          if (current.Next.Value.Equals(value))
           {
             insertNode.Next = current.Next;
             current.Next = insertNode;
@@ -138,10 +138,10 @@ namespace DataStructures
     }
 
     // Insert a new item into the list after an existing chosen value
-    public void InsertAfter(string value, string newValue)
+    public void InsertAfter(T value, T newValue)
     {
-      Node current = Head;
-      Node insertNode = new Node(newValue);
+      Node<T> current = Head;
+      Node<T> insertNode = new Node<T>(newValue);
       bool found = false;
 
       if (current == null)
@@ -152,7 +152,7 @@ namespace DataStructures
       {
         while (current != null)
         {
-          if (current.Value == value)
+          if (current.Value.Equals(value))
           {
             insertNode.Next = current.Next;
             current.Next = insertNode;
@@ -173,10 +173,10 @@ namespace DataStructures
 
     // Returns the value from the list that is the kth number from the end of the list.
     // Example if function receives 3 from a 5 Length list, it will return the 2nd item in the list. ( 5 - 3 ) = 2
-    public string KthFromEnd(int k)
+    public T KthFromEnd(int k)
     {
       int positionInList = Length - k - 1;
-      Node current = Head;
+      Node<T> current = Head;
 
       if (k > -1 && Head != null && Length >= k)
       {
@@ -194,11 +194,11 @@ namespace DataStructures
     }
 
     // Merges 2 Linked Lists by adding them via alternating nodes from each list
-    public Node ZipLists(LinkedList listA, LinkedList listB)
+    public Node<T> ZipLists(LinkedList<T> listA, LinkedList<T> listB)
     {
-      Node listACurrent = listA.Head;
-      Node listBCurrent = listB.Head;
-      Node listANextCurrent = listA.Head;
+      Node<T> listACurrent = listA.Head;
+      Node<T> listBCurrent = listB.Head;
+      Node<T> listANextCurrent = listA.Head;
 
       while(listANextCurrent != null || listBCurrent != null)
       {
@@ -230,8 +230,8 @@ namespace DataStructures
     // Removes a node from the Linked List
     public void Delete(int position)
     {
-      Node current = Head;
-      Node previous = current;
+      Node<T> current = Head;
+      Node<T> previous = current;
 
       if (position == 0)
       {
