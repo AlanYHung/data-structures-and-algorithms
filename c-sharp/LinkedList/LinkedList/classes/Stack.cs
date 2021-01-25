@@ -37,7 +37,7 @@ namespace DataStructures
 
     public bool IsEmpty()
     {
-      return top != null;
+      return top == null;
     }
   }
 }

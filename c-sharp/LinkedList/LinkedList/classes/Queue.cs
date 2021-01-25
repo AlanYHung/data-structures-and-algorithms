@@ -41,7 +41,7 @@ namespace DataStructures
 
     public T peek()
     {
-      if (IsEmpty())
+      if (!IsEmpty())
       {
         return front.Value;
       }
@@ -53,7 +53,7 @@ namespace DataStructures
 
     public bool IsEmpty()
     {
-      return front != null;
+      return front == null;
     }
   }
 }
