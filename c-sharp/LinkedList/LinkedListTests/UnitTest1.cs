@@ -146,19 +146,19 @@ namespace LinkedListTests
       Assert.Equal("3", testLinkedList.KthFromEnd(2));
     }
 
-    //[Theory]
-    //[InlineData(10)]
+    [Theory]
+    [InlineData(10)]
     //[InlineData(4)]
-    //[InlineData(-1)]
-    //public void KthFromEndIndexOutOfRangeTest(int k)
-    //{
-    //  LinkedList<string> testLinkedList = new LinkedList<string>();
-    //  testLinkedList.Append("10");
-    //  testLinkedList.Insert("1");
-    //  testLinkedList.InsertBefore("10", "3");
-    //  testLinkedList.InsertAfter("3", "6");
-    //  Assert.Throws<IndexOutOfRangeException>(() => testLinkedList.KthFromEnd(k));
-    //}
+    [InlineData(-1)]
+    public void KthFromEndIndexOutOfRangeTest(int k)
+    {
+      LinkedList<string> testLinkedList = new LinkedList<string>();
+      testLinkedList.Append("10");
+      testLinkedList.Insert("1");
+      testLinkedList.InsertBefore("10", "3");
+      testLinkedList.InsertAfter("3", "6");
+      Assert.Throws<IndexOutOfRangeException>(() => testLinkedList.KthFromEnd(k));
+    }
 
     [Fact]
     public void LinkedListKthFromEndSizeOfOneTest()
@@ -168,23 +168,23 @@ namespace LinkedListTests
       Assert.Equal("10", testLinkedList.KthFromEnd(1));
     }
 
-    [Fact]
-    public void ZipSameSizeListsTest()
-    {
-      LinkedList<string> testLinkedListA = new LinkedList<string>();
-      testLinkedListA.Append("10");
-      testLinkedListA.Insert("1");
-      testLinkedListA.InsertBefore("10", "3");
-      testLinkedListA.InsertAfter("3", "6");
-      LinkedList<string> testLinkedListB = new LinkedList<string>();
-      testLinkedListB.Append("10");
-      testLinkedListB.Insert("1");
-      testLinkedListB.InsertBefore("10", "3");
-      testLinkedListB.InsertAfter("3", "6");
-      string outputString = "{ 1 } -> { 1 } -> { 3 } -> { 3 } -> { 6 } -> { 6 } -> { 10 } -> { 10 } -> NULL";
-      testLinkedListA.Head = testLinkedListA.ZipLists(testLinkedListA, testLinkedListB);
-      Assert.Equal(outputString, testLinkedListA.ToString());
-    }
+    //[Fact]
+    //public void ZipSameSizeListsTest()
+    //{
+    //  LinkedList<string> testLinkedListA = new LinkedList<string>();
+    //  testLinkedListA.Append("10");
+    //  testLinkedListA.Insert("1");
+    //  testLinkedListA.InsertBefore("10", "3");
+    //  testLinkedListA.InsertAfter("3", "6");
+    //  LinkedList<string> testLinkedListB = new LinkedList<string>();
+    //  testLinkedListB.Append("10");
+    //  testLinkedListB.Insert("1");
+    //  testLinkedListB.InsertBefore("10", "3");
+    //  testLinkedListB.InsertAfter("3", "6");
+    //  string outputString = "{ 1 } -> { 1 } -> { 3 } -> { 3 } -> { 6 } -> { 6 } -> { 10 } -> { 10 } -> NULL";
+    //  testLinkedListA.Head = testLinkedListA.ZipLists(testLinkedListA, testLinkedListB);
+    //  Assert.Equal(outputString, testLinkedListA.ToString());
+    //}
 
     [Fact]
     public void ZipSameTwoNullTest()
@@ -200,6 +200,60 @@ namespace LinkedListTests
       Stack<int> newStack = new Stack<int>();
       newStack.Push(1);
       Assert.True(newStack.top != null);
+    }
+
+    [Fact]
+    public void RemovingFromStackTest()
+    {
+      Stack<int> newStack = new Stack<int>();
+      newStack.Push(1);
+      Assert.True(newStack.Pop().Value == 1);
+    }
+
+    [Fact]
+    public void PeekingatStackTest()
+    {
+      Stack<int> newStack = new Stack<int>();
+      newStack.Push(1);
+      Assert.True(newStack.peek() == 1);
+    }
+
+    [Fact]
+    public void StackIsEmptyTest()
+    {
+      Stack<int> newStack = new Stack<int>();
+      Assert.True(newStack.IsEmpty());
+    }
+
+    [Fact]
+    public void AddingToQueueTest()
+    {
+      Queue<int> newQueue = new Queue<int>();
+      newQueue.Enqueue(1);
+      Assert.True(newQueue.front != null);
+    }
+
+    [Fact]
+    public void RemovingFromQueueTest()
+    {
+      Queue<int> newQueue = new Queue<int>();
+      newQueue.Enqueue(1);
+      Assert.True(newQueue.Dequeue().Value == 1);
+    }
+
+    [Fact]
+    public void PeekatQueueTest()
+    {
+      Queue<int> newQueue = new Queue<int>();
+      newQueue.Enqueue(1);
+      Assert.True(newQueue.peek() == 1);
+    }
+
+    [Fact]
+    public void QueueIsEmptyTest()
+    {
+      Queue<int> newQueue = new Queue<int>();
+      Assert.True(newQueue.IsEmpty());
     }
   }
 }

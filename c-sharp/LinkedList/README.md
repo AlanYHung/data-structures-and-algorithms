@@ -16,9 +16,18 @@
 * Create an InsertAfter method that will search for a list item and insert a new Node after that list item
 * Create a KthFromEnd method that will take an int k and return the node value that is k spaces away from the end
 * Create a ZipList method that will take in 2 lists and merge them via alternating nodes from each list
+* Create a Stack with the methods Push, Pop, peek, and IsEmpty
+* Create a Queue with the methods Enqueue, Dequeue, peek, and IsEmpty
 
 ### Challenge Description
-Create a functioning Linked List with insert, display, and search functionality.
+* Create a functioning Linked List with insert, display, and search functionality.
+* Append method adds new items to the end of the list
+* InsertBefore method inserts a new Node with inputed value before a user chosen value
+* InsertAfter method inserts a new Node with inputed value after a user chosen value
+* KthFromEnd method will tell you the node that is k positions away from the end of the list
+* ZipList will take 2 linked lists and merge them together via alternating nodes
+* Create Stack where Push adds node, Pop removes node, peek returns value of top node, and IsEmpty lets you know if Stack is empty
+* Create Queue where Enqueue adds node, Dequeue removes node, peek returns value of top node, and IsEmpty lets you know if Queue is empty
 
 ### Approach & Efficiency
 * Create a Node Class with value and pointer.
@@ -29,6 +38,20 @@ Create a functioning Linked List with insert, display, and search functionality.
   * Efficiency: O(n)
 * __toString__ create a pointer to traverse the list and pull out the value.  Then append to string. Return the string.
   * Efficiency: O(n)
+* __Append__ traverses to end of list and adds the new node to the end
+  * Efficiency: O(n)
+* __InsertBefore__ traverses to the Node before chosen value and inserts Node in
+  * Efficiency: O(n)
+* __InsertAfter__ traverses to the Node and inserts the Node after
+  * Efficiency: O(n)
+* __KthFromEnd__ takes the length of the linked list then traverses to length - k node and returns value
+  * Efficiency: O(n)
+* __ZipList__ takes two lists and merges them into 1 list via alternating nodes
+  * Efficiency: O(n)
+* Stack Push is an insert function, Pop removes top node and resets top to next node, peek returns top nodes's value, and IsEmpty checks if top is null
+  * Efficiency: O(n) / all methods
+* Queue Enqueue is an insert function, Dequeue removes front node and resets front to next node, peek returns front nodes's value, and IsEmpty checks if front is null
+  * Efficiency: O(n) / all methods
 
 ### Solution
 * [Append - Whiteboard](./assets/append.png)
@@ -61,6 +84,8 @@ Create a functioning Linked List with insert, display, and search functionality.
 * 1.6.0 - 1/19/2021 8:30pm - Implemented New Length Property and added tracking functionality to all Add methods
 * 1.7.0 - 1/19/2021 9:00pm - Added User Interface Input and Output with Exception handling for new method
 * 1.8.0 - 1/19/2021 9:30pm - Unit Tests written and ran for new method
+* 1.9.0 - 1/22/2021 7:00pm - Stack Class implemented
+* 2.0.0 - 1/22/2021 7:30pm - Queue Class implemented
 
 ### Attribution
 * [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/)
