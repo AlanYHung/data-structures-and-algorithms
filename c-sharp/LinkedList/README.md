@@ -63,7 +63,7 @@
 * [InsertAfter - Whiteboard](./assets/CodeChallenge06-insertafter.pdf)
 * [KthFromEnd - Whiteboard](./assets/kthfromend.pdf)
 * [ZipList - Whiteboard](./assets/ZipList.PNG)
-* [ZipList - Whiteboard](./assets/QueueWithStacks.PNG)
+* [QueueWithStacks - Whiteboard](./assets/QueueWithStacks.PNG)
 
 ### Example
 * ![](./assets/LinkedList1.PNG)
