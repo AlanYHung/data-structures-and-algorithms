@@ -18,6 +18,7 @@
 * Create a ZipList method that will take in 2 lists and merge them via alternating nodes from each list
 * Create a Stack with the methods Push, Pop, peek, and IsEmpty
 * Create a Queue with the methods Enqueue, Dequeue, peek, and IsEmpty
+* Create a Class called PseudoQueue that mimics a Queue using 2 stacks
 
 ### Challenge Description
 * Create a functioning Linked List with insert, display, and search functionality.
@@ -28,6 +29,7 @@
 * ZipList will take 2 linked lists and merge them together via alternating nodes
 * Create Stack where Push adds node, Pop removes node, peek returns value of top node, and IsEmpty lets you know if Stack is empty
 * Create Queue where Enqueue adds node, Dequeue removes node, peek returns value of top node, and IsEmpty lets you know if Queue is empty
+* Create a new PseudoQueue Class that has an enqueue and dequeue method, but uses stacks to mimic Queue FIFO principles
 
 ### Approach & Efficiency
 * Create a Node Class with value and pointer.
@@ -52,6 +54,8 @@
   * Efficiency: O(n) / all methods
 * Queue Enqueue is an insert function, Dequeue removes front node and resets front to next node, peek returns front nodes's value, and IsEmpty checks if front is null
   * Efficiency: O(n) / all methods
+* PseudoQueue is a class that uses stacks to mimic Queue FIFO principles, it has an enqueue method that takes in a new value and adds it to the stack by reversing the stack then adding the new node first to the new stack, and a dequeue that removes the top node from the stack.
+  * Efficiency: Enqueue: O(n) / Dequeue: O(1)
 
 ### Solution
 * [Append - Whiteboard](./assets/append.png)
@@ -59,6 +63,7 @@
 * [InsertAfter - Whiteboard](./assets/CodeChallenge06-insertafter.pdf)
 * [KthFromEnd - Whiteboard](./assets/kthfromend.pdf)
 * [ZipList - Whiteboard](./assets/ZipList.PNG)
+* [ZipList - Whiteboard](./assets/QueueWithStacks.PNG)
 
 ### Example
 * ![](./assets/LinkedList1.PNG)
@@ -86,6 +91,7 @@
 * 1.8.0 - 1/19/2021 9:30pm - Unit Tests written and ran for new method
 * 1.9.0 - 1/22/2021 7:00pm - Stack Class implemented
 * 2.0.0 - 1/22/2021 7:30pm - Queue Class implemented
+* 2.2.0 - 1/25/2021 10:21pm - PseudoQueue Class implemented with enqueue and dequeue methods
 
 ### Attribution
 * [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/)

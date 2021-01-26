@@ -8,6 +8,12 @@ namespace DataStructures
   {
     public Stack<T> QueueWithStack { get; set; }
 
+    public PseudoQueue()
+    {
+      Stack<T> newStack = new Stack<T>();
+      QueueWithStack = newStack;
+    }
+
     public void enqueue(T value)
     {
       Stack<T> tempStack = new Stack<T>();
@@ -36,10 +42,17 @@ namespace DataStructures
       }// end else
     }// end enqueue
 
-    public Node<T> dequeue()
+    public T dequeue()
     {
-      // enqueue keeps list in FIFO order, so just use predefined pop method to get the value.
-      return QueueWithStack.Pop();
-    }
+      // Throw Exception if dequeue is called when stack is empty
+      if (QueueWithStack.IsEmpty())
+      {
+        throw new NullReferenceException();
+      }
+      else
+      {
+        return QueueWithStack.Pop().Value;
+      }
+    }// end dequeue
   }
 }

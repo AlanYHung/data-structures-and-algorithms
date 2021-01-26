@@ -255,5 +255,31 @@ namespace LinkedListTests
       Queue<int> newQueue = new Queue<int>();
       Assert.True(newQueue.IsEmpty());
     }
+
+    [Fact]
+    public void QueueWithStackEmptyEnqueueAndDequeueTest()
+    {
+      PseudoQueue<int> newPseudoQueue = new PseudoQueue<int>();
+      newPseudoQueue.enqueue(1);
+      Assert.Equal(1, newPseudoQueue.dequeue());
+    }
+
+    [Fact]
+    public void QueueWithStackEnqueueAndDequeueTest()
+    {
+      PseudoQueue<int> newPseudoQueue = new PseudoQueue<int>();
+      newPseudoQueue.enqueue(1);
+      newPseudoQueue.enqueue(2);
+      newPseudoQueue.enqueue(3);
+      newPseudoQueue.enqueue(4);
+      Assert.Equal(1, newPseudoQueue.dequeue());
+    }
+
+    [Fact]
+    public void QueueWithStackEmptyDequeueTest()
+    {
+      PseudoQueue<int> newPseudoQueue = new PseudoQueue<int>();
+      Assert.Throws<NullReferenceException>(() => newPseudoQueue.dequeue());
+    }
   }
 }
