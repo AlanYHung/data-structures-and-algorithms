@@ -281,5 +281,26 @@ namespace LinkedListTests
       PseudoQueue<int> newPseudoQueue = new PseudoQueue<int>();
       Assert.Throws<NullReferenceException>(() => newPseudoQueue.dequeue());
     }
+
+    [Fact]
+    public void EmptyAnimalShelterEnqueueAndDequeueTest()
+    {
+      AnimalShelter newShelter = new AnimalShelter();
+      newShelter.enqueue((CatDog)0);
+      Assert.Equal((CatDog)0, newShelter.dequeue((CatDog)0));
+    }
+
+    [Fact]
+    public void AnimalShelterEnqueueAndDequeueTest()
+    {
+      AnimalShelter newShelter = new AnimalShelter();
+      newShelter.enqueue((CatDog)1);
+      newShelter.enqueue((CatDog)1);
+      newShelter.enqueue((CatDog)0);
+      newShelter.enqueue((CatDog)1);
+      newShelter.enqueue((CatDog)0);
+      Assert.Equal((CatDog)0, newShelter.dequeue((CatDog)0));
+      Assert.Equal((CatDog)0, newShelter.dequeue((CatDog)0));
+    }
   }
 }

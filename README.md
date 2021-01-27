@@ -63,3 +63,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
   * [Linked List - KthFromEnd](./c-sharp/LinkedList/assets/kthfromend.pdf)
   * [Linked List - ZipList](./c-sharp/LinkedList/assets/ZipList.PNG)
   * [Linked List - QueueWithStacks](./c-sharp/LinkedList/assets/QueueWithStacks.PNG)
+  * [Linked List - AnimalShelter](./c-sharp/LinkedList/assets/fifo-animal-shelter.png)

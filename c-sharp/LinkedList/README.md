@@ -19,6 +19,7 @@
 * Create a Stack with the methods Push, Pop, peek, and IsEmpty
 * Create a Queue with the methods Enqueue, Dequeue, peek, and IsEmpty
 * Create a Class called PseudoQueue that mimics a Queue using 2 stacks
+* Create a Class called AnimalShelter that has a Queue of Cats and Dogs and has an enqueue and dequeue method
 
 ### Challenge Description
 * Create a functioning Linked List with insert, display, and search functionality.
@@ -30,6 +31,7 @@
 * Create Stack where Push adds node, Pop removes node, peek returns value of top node, and IsEmpty lets you know if Stack is empty
 * Create Queue where Enqueue adds node, Dequeue removes node, peek returns value of top node, and IsEmpty lets you know if Queue is empty
 * Create a new PseudoQueue Class that has an enqueue and dequeue method, but uses stacks to mimic Queue FIFO principles
+* Create a new AnimalShelter Class that has an enqueue and dequeue method and works with dog and cat types
 
 ### Approach & Efficiency
 * Create a Node Class with value and pointer.
@@ -56,6 +58,8 @@
   * Efficiency: O(n) / all methods
 * PseudoQueue is a class that uses stacks to mimic Queue FIFO principles, it has an enqueue method that takes in a new value and adds it to the stack by reversing the stack then adding the new node first to the new stack, and a dequeue that removes the top node from the stack.
   * Efficiency: Enqueue: O(n) / Dequeue: O(1)
+* AnimalShelter is a queue that follows FIFO principles with an enqueue method that does not have any different logic than normal, but dequeue will take in a pref of the user of dog or cat and remove the first instance of that type.
+  * Efficiency: O(n) / all methods
 
 ### Solution
 * [Append - Whiteboard](./assets/append.png)
@@ -64,6 +68,7 @@
 * [KthFromEnd - Whiteboard](./assets/kthfromend.pdf)
 * [ZipList - Whiteboard](./assets/ZipList.PNG)
 * [QueueWithStacks - Whiteboard](./assets/QueueWithStacks.PNG)
+* [AnimalShelter - Whiteboard](./assets/fifo-animal-shelter.png)
 
 ### Example
 * ![](./assets/LinkedList1.PNG)
@@ -92,6 +97,7 @@
 * 1.9.0 - 1/22/2021 7:00pm - Stack Class implemented
 * 2.0.0 - 1/22/2021 7:30pm - Queue Class implemented
 * 2.2.0 - 1/25/2021 10:21pm - PseudoQueue Class implemented with enqueue and dequeue methods
+* 2.4.0 - 1/26/2021 10:50pm - AnimalShelter Class implemented with enqueue and dequeue methods
 
 ### Attribution
 * [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/)
