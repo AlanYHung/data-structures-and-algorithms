@@ -20,6 +20,7 @@
 * Create a Queue with the methods Enqueue, Dequeue, peek, and IsEmpty
 * Create a Class called PseudoQueue that mimics a Queue using 2 stacks
 * Create a Class called AnimalShelter that has a Queue of Cats and Dogs and has an enqueue and dequeue method
+* Create a method called MultiBracketValidation that takes in a string and returns a bool
 
 ### Challenge Description
 * Create a functioning Linked List with insert, display, and search functionality.
@@ -32,6 +33,7 @@
 * Create Queue where Enqueue adds node, Dequeue removes node, peek returns value of top node, and IsEmpty lets you know if Queue is empty
 * Create a new PseudoQueue Class that has an enqueue and dequeue method, but uses stacks to mimic Queue FIFO principles
 * Create a new AnimalShelter Class that has an enqueue and dequeue method and works with dog and cat types
+* MultiBracketValidation method checks a string for ()[]{} and lets the user know that every open bracket is matched by a closing bracket in the correct order.
 
 ### Approach & Efficiency
 * Create a Node Class with value and pointer.
@@ -60,6 +62,8 @@
   * Efficiency: Enqueue: O(n) / Dequeue: O(1)
 * AnimalShelter is a queue that follows FIFO principles with an enqueue method that does not have any different logic than normal, but dequeue will take in a pref of the user of dog or cat and remove the first instance of that type.
   * Efficiency: O(n) / all methods
+* MultiBracketValidation will take in a string and traverse over the length of the string.  It pushes all open brackets onto a stack then checks all closing brackets against the stack.
+  * Efficiency: O(n)
 
 ### Solution
 * [Append - Whiteboard](./assets/append.png)
@@ -69,6 +73,7 @@
 * [ZipList - Whiteboard](./assets/ZipList.PNG)
 * [QueueWithStacks - Whiteboard](./assets/QueueWithStacks.PNG)
 * [AnimalShelter - Whiteboard](./assets/fifo-animal-shelter.png)
+* [Multi-Bracket Validation - Whiteboard](./assets/MultiBracketCC13.PNG)
 
 ### Example
 * ![](./assets/LinkedList1.PNG)
@@ -98,6 +103,7 @@
 * 2.0.0 - 1/22/2021 7:30pm - Queue Class implemented
 * 2.2.0 - 1/25/2021 10:21pm - PseudoQueue Class implemented with enqueue and dequeue methods
 * 2.4.0 - 1/26/2021 10:50pm - AnimalShelter Class implemented with enqueue and dequeue methods
+* 2.5.0 - 1/27/2021 10:25pm - Created MutliBracketValidation & MutliBracketUserInput
 
 ### Attribution
 * [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/)

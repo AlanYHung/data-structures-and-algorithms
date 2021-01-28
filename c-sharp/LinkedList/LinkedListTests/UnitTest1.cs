@@ -294,13 +294,33 @@ namespace LinkedListTests
     public void AnimalShelterEnqueueAndDequeueTest()
     {
       AnimalShelter newShelter = new AnimalShelter();
-      newShelter.enqueue((CatDog)1);
-      newShelter.enqueue((CatDog)1);
+      newShelter.enqueue((CatDog)0);
       newShelter.enqueue((CatDog)0);
       newShelter.enqueue((CatDog)1);
       newShelter.enqueue((CatDog)0);
+      newShelter.enqueue((CatDog)1);
       Assert.Equal((CatDog)0, newShelter.dequeue((CatDog)0));
       Assert.Equal((CatDog)0, newShelter.dequeue((CatDog)0));
+    }
+
+    [Theory]
+    [InlineData(true, "{}")]
+    [InlineData(true, "{}(){}")]
+    [InlineData(true, "()[[Extra Characters]]")]
+    [InlineData(true, "(){}[[]]")]
+    [InlineData(true, "{}{Code}[Fellows](())")]
+    [InlineData(false, "[({}]")]
+    [InlineData(false, "(](")]
+    [InlineData(false, "{(})")]
+    public void MultiBracketValidationTest(bool expectedResult, string testInput)
+    {
+      Assert.Equal(expectedResult, Program.MultiBracketValidation(testInput));
+    }
+
+    [Fact]
+    public void MultiBracketValidationEmptyStringTest()
+    {
+      Assert.Throws<Exception>(() => Program.MultiBracketValidation(""));
     }
   }
 }

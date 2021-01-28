@@ -37,7 +37,7 @@ namespace DataStructures
       front = removeNode.Next;
       removeNode.Next = null;
       return removeNode;
-    }
+    } 
 
     public T peek()
     {
