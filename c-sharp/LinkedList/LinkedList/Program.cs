@@ -60,6 +60,26 @@ namespace DataStructures
             pauseScreen();
             break;
           case "7":
+            try
+            {
+              if (MultiBracketUserInput())
+              {
+                Console.WriteLine("\n Brackets in string are Balanced.");
+                pauseScreen();
+              }
+              else
+              {
+                Console.WriteLine("\n Brackets in string are Unbalanced.");
+                pauseScreen();
+              }
+            }// end try
+            catch(Exception e)
+            {
+              Console.WriteLine("\n\n" + e);
+              pauseScreen();
+            }
+            break;
+          case "8":
             Console.WriteLine("Have a nice day!");
             break;
           default:
@@ -67,7 +87,7 @@ namespace DataStructures
             pauseScreen();
             break;
         }
-      } while (userInput != "7");
+      } while (userInput != "8");
     }
 
     // Creates a default list
@@ -97,8 +117,9 @@ namespace DataStructures
       Console.WriteLine("4. Get the kth item from the end of the list");
       Console.WriteLine("5. Zip 2 Linked Lists together");
       Console.WriteLine("6. Display List");
-      Console.WriteLine("7. Exit");
-      Console.Write("\n\nPlease choose a number (1-7): ");
+      Console.WriteLine("7. Multi-Bracket Validation");
+      Console.WriteLine("8. Exit");
+      Console.Write("\n\nPlease choose a number (1-8): ");
       userInput = Console.ReadLine();
       Console.Clear();
 
@@ -296,6 +317,79 @@ namespace DataStructures
         Console.WriteLine("\n\n{0}", e);
         pauseScreen();
       }
+    }// end KthFromEnd
+
+    public static bool MultiBracketUserInput()
+    {
+      Console.WriteLine("Please enter a string that includes () {} [].");
+      Console.WriteLine("This method will let you know if the brackets are balanced meaning every open bracket has a close in the correct order.");
+      Console.Write("Enter Here: ");
+      string userInput = Console.ReadLine();
+      return MultiBracketValidation(userInput);
+    }
+
+    public static bool MultiBracketValidation(string input)
+    {
+      Stack<char> bracketValidater = new Stack<char>();
+
+      if(input.Length == 0)
+      {
+        throw new Exception("Empty String.");
+      }
+
+      foreach (char character in input)
+      {
+        if(character == '(' || character == '[' || character == '{')
+        {
+          bracketValidater.Push(character);
+        }
+
+        switch (character)
+        {
+          case ')':
+            if (bracketValidater.IsEmpty())
+            {
+              return false;
+            }
+
+            if(bracketValidater.peek() == '(')
+            {
+              bracketValidater.Pop();
+            }
+            break;
+          case ']':
+            if (bracketValidater.IsEmpty())
+            {
+              return false;
+            }
+
+            if (bracketValidater.peek() == '[')
+            {
+              bracketValidater.Pop();
+            }
+            break;
+          case '}':
+            if (bracketValidater.IsEmpty())
+            {
+              return false;
+            }
+
+            if (bracketValidater.peek() == '{')
+            {
+              bracketValidater.Pop();
+            }
+            break;
+          default:
+            break;
+        }
+      }
+
+      if (!bracketValidater.IsEmpty())
+      {
+        return false;
+      }
+
+      return true;
     }
   }
 }
