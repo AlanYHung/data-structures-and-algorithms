@@ -1,4 +1,4 @@
-# Code Challenge: Class 05: Linked List Implementation
+# Code Challenge: Class 05-14: Linked List Implementation
 
 ## Author: Alan Hung
 
