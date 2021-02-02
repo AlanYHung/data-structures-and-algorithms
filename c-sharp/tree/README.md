@@ -13,10 +13,12 @@
   * Define a method called contains that takes in a value as an argument and returns a boolean of whether or not the value is contained within the tree.
 
 ### Challenge Summary Part 2
+* Write a method called Find-Maximum-Value that searches through a Binary Tree and returns the largest value in the tree.
 
 ### Challenge Description
 * Create a Binary Tree with a working preorder, inorder, and postorder traversal methods
 * Create a Binary Search Tree with a working add and contains method.
+* Create a method called FindMaximumValue in the Binary Tree class and have it return the largest value in the tree.
 
 ### Approach & Efficiency
 * Create a Node Class with value and pointer to the left and right child.
@@ -32,10 +34,14 @@
   * Efficiency: O(log n)
 * __Contains__ Checks if a value is stored within the Binary Search Tree
   * Efficiency: O(log n)
+* __FindMaximumValue__ Takes in no parameters, but uses an overloaded/helper function with node and value parameters to recursively search for the largest value in a tree and returns that value.
+  * Efficiency: O(n)
 
 ### Solution
+* [Append - Whiteboard](./assets/FindMaxValueWhiteboard.PNG)
 
 ### Example
+![Append - Whiteboard](./assets/ExampleProgram1.PNG)
 
 ### Change Log
 * 0.2.0 - 1/31/2021 10:00pm - Created Node Class, Binary Tree Class, and PreOrder Traverse method
@@ -43,6 +49,7 @@
 * 0.6.0 - 1/31/2021 10:10pm - Created PostOrder Traverse method
 * 0.8.0 - 1/31/2021 11:00pm - Created Binary Search Tree Class and Add method
 * 1.0.0 - 1/31/2021 11:30pm - Created Contains method
+* 1.1.0 - 2/01/2021 11:40pm - Created FindMaximumValue method
 
 ### Attribution
 * [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/)

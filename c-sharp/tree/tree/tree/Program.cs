@@ -4,10 +4,10 @@ using tree.binarytree.classes;
 
 namespace tree
 {
-  class Program
+  public class Program
   {
-    static BinaryTree<string> myTree = new BinaryTree<string>();
-    static BinarySearchTree myBST = new BinarySearchTree();
+    public static BinaryTree<string> myTree = new BinaryTree<string>();
+    public static BinarySearchTree<int> myBST = new BinarySearchTree<int>();
 
     static void Main(string[] args)
     {
@@ -29,7 +29,7 @@ namespace tree
       }
 
       Console.WriteLine();
-      bstList = myBST.MyBST.PreOrder(myBST.MyBST.Root, bstList);
+      bstList = myBST.PreOrder(myBST.Root, bstList);
       Console.Write("Pre-Order Binary Search Tree:  ");
 
       foreach (int value in bstList)
@@ -51,7 +51,7 @@ namespace tree
       }
 
       Console.WriteLine();
-      bstList = myBST.MyBST.InOrder(myBST.MyBST.Root, new List<int>());
+      bstList = myBST.InOrder(myBST.Root, new List<int>());
       Console.Write("In-Order Binary Search Tree:  ");
 
       foreach (int value in bstList)
@@ -73,7 +73,7 @@ namespace tree
       }
 
       Console.WriteLine();
-      bstList = myBST.MyBST.PostOrder(myBST.MyBST.Root, new List<int>());
+      bstList = myBST.PostOrder(myBST.Root, new List<int>());
       Console.Write("Post-Order Binary Search Tree:  ");
 
       foreach (int value in bstList)
@@ -88,6 +88,9 @@ namespace tree
       Console.WriteLine("BST contains 99:  {0}", myBST.Contains(99));
       Console.WriteLine("BST contains 13:  {0}", myBST.Contains(13));
       Console.WriteLine("BST contains 45:  {0}", myBST.Contains(45));
+      Console.WriteLine("\n");
+      Console.WriteLine("Max Value BT: {0}", myTree.FindMaximumValue());
+      Console.WriteLine("Max Value BST: {0}", myBST.FindMaximumValue());
       Console.WriteLine("\n\n");
     }
 
@@ -115,24 +118,24 @@ namespace tree
 
     public static void PopulateBinarySearchTree()
     {
-      myBST.Add(25);
+      myBST.Add(myBST.Root, 25);
 
-      myBST.Add(15);
-      myBST.Add(50);
+      myBST.Add(myBST.Root, 15);
+      myBST.Add(myBST.Root, 50);
 
-      myBST.Add(10);
-      myBST.Add(22);
-      myBST.Add(35);
-      myBST.Add(70);
+      myBST.Add(myBST.Root, 10);
+      myBST.Add(myBST.Root, 22);
+      myBST.Add(myBST.Root, 35);
+      myBST.Add(myBST.Root, 70);
 
-      myBST.Add(4);
-      myBST.Add(12);
-      myBST.Add(18);
-      myBST.Add(24);
-      myBST.Add(31);
-      myBST.Add(44);
-      myBST.Add(66);
-      myBST.Add(90);
+      myBST.Add(myBST.Root, 4);
+      myBST.Add(myBST.Root, 12);
+      myBST.Add(myBST.Root, 18);
+      myBST.Add(myBST.Root, 24);
+      myBST.Add(myBST.Root, 31);
+      myBST.Add(myBST.Root, 44);
+      myBST.Add(myBST.Root, 66);
+      myBST.Add(myBST.Root, 90);
     }
   }
 }

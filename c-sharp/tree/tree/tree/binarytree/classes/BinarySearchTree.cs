@@ -4,65 +4,43 @@ using System.Text;
 
 namespace tree.binarytree.classes
 {
-  public class BinarySearchTree
+  public class BinarySearchTree<T> : BinaryTree<T> where T : IComparable
   {
-    public BinaryTree<int> MyBST { get; set; }
-
-    public BinarySearchTree()
-    {
-      MyBST = new BinaryTree<int>();
-    }
-
     /// <summary>
     /// This method adds a Node in BST search order
     /// </summary>
     /// <param name="value">The new value being added to the BST</param>
-    public void Add(int value)
+    public void Add(Node<T> current, T value)
     {
-      Node<int> newNode = new Node<int>(value);
+      Node<T> newNode = new Node<T>(value);
 
-      // checks if the there is a value in the tree starting off
-      if (MyBST.Root != null)
+      if(Root == null)
       {
-        Node<int> current = MyBST.Root;
-        bool keepTraversing = true;
-
-        // traverses until a null value is hit and exit flag is triggered
-        while (keepTraversing)
-        {
-
-          // compares if th value should go to the left side of the tree/subtree or to the right side
-          if (newNode.Value < current.Value)
-          {
-            if(current.LeftChild != null)
-            {
-              current = current.LeftChild;
-            }
-            else
-            {
-              current.LeftChild = newNode;
-              keepTraversing = false;
-            }
-          }// end if
-          else
-          {
-            if(current.RightChild != null)
-            {
-              current = current.RightChild;
-            }
-            else
-            {
-              current.RightChild = newNode;
-              keepTraversing = false;
-            }
-          }// end else
-        } // end while 
+        Root = newNode;
+        return;
       }
 
-      // if there isn't a starting node then this makes the new value the starting node
-      else
+      if(newNode.Value.CompareTo(current.Value) < 0)
       {
-        MyBST.Root = newNode;
+        if(current.LeftChild == null)
+        {
+          current.LeftChild = newNode;
+        }
+        else
+        {
+          Add(current.LeftChild, value);
+        }
+      }
+      else if (newNode.Value.CompareTo(current.Value) > 0)
+      {
+        if (current.RightChild == null)
+        {
+          current.RightChild = newNode;
+        }
+        else
+        {
+          Add(current.RightChild, value);
+        }
       }
     }// end add(value) method
 
@@ -71,19 +49,19 @@ namespace tree.binarytree.classes
     /// </summary>
     /// <param name="value">value to search for</param>
     /// <returns></returns>
-    public bool Contains(int value)
+    public bool Contains(T value)
     {
-      if(MyBST.Root != null)
+      if(Root != null)
       {
-        Node<int> current = MyBST.Root;
+        Node<T> current = Root;
 
         while(current != null)
         {
-          if(current.Value == value)
+          if(current.Value.Equals(value))
           {
             return true;
           }
-          else if(value < current.Value)
+          else if(value.CompareTo(current.Value) < 0)
           {
             current = current.LeftChild;
           }

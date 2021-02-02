@@ -66,3 +66,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
   * [Linked List - AnimalShelter](./c-sharp/LinkedList/assets/fifo-animal-shelter.png)
   * [Linked List - MultiBracketValidation](./c-sharp/LinkedList/assets/MultiBracketCC13.PNG)
 1. [Binary Tree](./c-sharp/tree/README.md)
+  * [Trees - FindMaximumValue](./c-sharp/LinkedList/assets/FindMaxValueWhiteboard.PNG)

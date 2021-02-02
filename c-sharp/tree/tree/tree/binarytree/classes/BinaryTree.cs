@@ -4,7 +4,7 @@ using System.Text;
 
 namespace tree.binarytree.classes
 {
-  public class BinaryTree<T>
+  public class BinaryTree<T> where T : IComparable
   {
     // The first node in the tree
     public Node<T> Root { get; set; }
@@ -64,6 +64,44 @@ namespace tree.binarytree.classes
       }
 
       return returnList;
+    }
+
+    /// <summary>
+    /// This function finds the largest value in a tree and returns it
+    /// </summary>
+    /// <returns>largest value in the tree</returns>
+    public T FindMaximumValue()
+    {
+      if (Root == null)
+      {
+        throw new NullReferenceException();
+      }
+      else
+      {
+        return FindMaximumValue(Root, Root.Value);
+      }
+    }
+
+    /// <summary>
+    /// Helper/Overload Function for FindMaxValue
+    /// </summary>
+    /// <param name="current">current node position in tree</param>
+    /// <param name="maxValue">current largest value</param>
+    /// <returns>largest value in tree</returns>
+    private T FindMaximumValue(Node<T> current, T maxValue)
+    {
+      if (current != null)
+      {
+        if (current.Value.CompareTo(maxValue) > 0)
+        {
+          maxValue = current.Value;
+        }
+
+        maxValue = FindMaximumValue(current.LeftChild, maxValue);
+        maxValue = FindMaximumValue(current.RightChild, maxValue);
+      }
+
+      return maxValue;
     }
   }
 }
