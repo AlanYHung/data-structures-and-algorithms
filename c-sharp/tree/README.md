@@ -38,10 +38,10 @@
   * Efficiency: O(n)
 
 ### Solution
-* [Append - Whiteboard](./assets/FindMaxValueWhiteboard.PNG)
+* [Append - Whiteboard](./tree/tree/assets/FindMaxValueWhiteboard.PNG)
 
 ### Example
-![Append - Whiteboard](./assets/ExampleProgram1.PNG)
+![Append - Whiteboard](./tree/tree/assets/ExampleProgram1.PNG)
 
 ### Change Log
 * 0.2.0 - 1/31/2021 10:00pm - Created Node Class, Binary Tree Class, and PreOrder Traverse method
