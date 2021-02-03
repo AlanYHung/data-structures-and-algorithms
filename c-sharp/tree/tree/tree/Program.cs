@@ -81,6 +81,31 @@ namespace tree
         Console.Write("{0} ", value);
       }
 
+
+
+      // This section is for Breadth First Traverse
+      Console.WriteLine("\n");
+      treeList = new List<string>();
+      treeList = myTree.BreadthFirst();
+      Console.Write("Breadth-First Tree:                ");
+
+      foreach (string value in treeList)
+      {
+        Console.Write("{0} ", value);
+      }
+
+      Console.WriteLine();
+      bstList = myBST.BreadthFirst();
+      Console.Write("Breadth First Binary Search Tree:  ");
+
+      foreach (int value in bstList)
+      {
+        Console.Write("{0} ", value);
+      }
+
+
+
+      // This section Tests the BST Contains Method
       Console.WriteLine("\n");
       Console.WriteLine("BST contains 50:  {0}", myBST.Contains(50));
       Console.WriteLine("BST contains 90:  {0}", myBST.Contains(90));
@@ -88,6 +113,10 @@ namespace tree
       Console.WriteLine("BST contains 99:  {0}", myBST.Contains(99));
       Console.WriteLine("BST contains 13:  {0}", myBST.Contains(13));
       Console.WriteLine("BST contains 45:  {0}", myBST.Contains(45));
+
+
+
+      // This section Tests the BT Max Value Method
       Console.WriteLine("\n");
       Console.WriteLine("Max Value BT: {0}", myTree.FindMaximumValue());
       Console.WriteLine("Max Value BST: {0}", myBST.FindMaximumValue());

@@ -39,6 +39,15 @@ namespace TreeTesting
     }
 
     [Fact]
+    public void BinaryTreeBreadthFirstTraversalTest()
+    {
+      myTree = Program.myTree;
+      Program.PopulateBinaryTree();
+      List<string> expected = new List<string>() {"25", "15", "50", "10", "22", "35", "70", "4", "12", "18", "24", "31", "44", "66", "90" };
+      Assert.Equal(expected, myTree.BreadthFirst());
+    }
+
+    [Fact]
     public void EmptyBinaryTreePreOrderTraversalTest()
     {
       myTree = new BinaryTree<string>();
@@ -57,6 +66,13 @@ namespace TreeTesting
     {
       myTree = new BinaryTree<string>();
       Assert.Equal(new List<string>(), myTree.PostOrder(myTree.Root, new List<string>()));
+    }
+
+    [Fact]
+    public void EmptyBinaryTreeBreadthFirstTest()
+    {
+      myTree = new BinaryTree<string>();
+      Assert.Throws<NullReferenceException>(() => myBST.BreadthFirst());
     }
 
     [Fact]
