@@ -103,5 +103,43 @@ namespace tree.binarytree.classes
 
       return maxValue;
     }
+
+    /// <summary>
+    /// Traverses a tree using Breadth First Search and returns a List of the nodes in search order
+    /// </summary>
+    /// <returns>List of values in Breadth First Search order</returns>
+    public List<T> BreadthFirst()
+    {
+      Queue<Node<T>> q = new Queue<Node<T>>();
+      List<T> returnList = new List<T>();
+      Node<T> tempNode = new Node<T>();
+
+      if (Root != null)
+      {
+        q.Enqueue(Root);
+
+        do
+        {
+          tempNode = q.Dequeue();
+          returnList.Add(tempNode.Value);
+
+          if (tempNode.LeftChild != null)
+          {
+            q.Enqueue(tempNode.LeftChild);
+          }
+
+          if (tempNode.RightChild != null)
+          {
+            q.Enqueue(tempNode.RightChild);
+          }
+        } while (q.Count > 0);
+
+        return returnList;
+      }
+      else
+      {
+        throw new NullReferenceException();
+      }
+    }// End BreadthFirst method
   }
 }
