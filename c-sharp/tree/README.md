@@ -14,11 +14,13 @@
 
 ### Challenge Summary Part 2
 * Write a method called Find-Maximum-Value that searches through a Binary Tree and returns the largest value in the tree.
+* Write a method called BreadthFirst that traverses a tree using Breadth First Search and returns a List of Node Values in Search order.
 
 ### Challenge Description
 * Create a Binary Tree with a working preorder, inorder, and postorder traversal methods
 * Create a Binary Search Tree with a working add and contains method.
 * Create a method called FindMaximumValue in the Binary Tree class and have it return the largest value in the tree.
+* Create a method called BreadthFirst in the Binary Tree class and have it return a list of all values using BFS traversal order.
 
 ### Approach & Efficiency
 * Create a Node Class with value and pointer to the left and right child.
@@ -36,9 +38,12 @@
   * Efficiency: O(log n)
 * __FindMaximumValue__ Takes in no parameters, but uses an overloaded/helper function with node and value parameters to recursively search for the largest value in a tree and returns that value.
   * Efficiency: O(n)
+* __BreadthFirst__ Takes in no parameters, but returns a List of nodes in Breadth First Traverse order.
+  * Efficiency: O(n)
 
 ### Solution
-* [Append - Whiteboard](./tree/tree/assets/FindMaxValueWhiteboard.PNG)
+* [Find Max Value in Tree - Whiteboard](./tree/tree/assets/FindMaxValueWhiteboard.PNG)
+* [Breadth First Traversal - Whiteboard](./tree/tree/assets/BreadthFirstCC17wb.PNG)
 
 ### Example
 ![Append - Whiteboard](./tree/tree/assets/ExampleProgram1.PNG)
@@ -50,6 +55,7 @@
 * 0.8.0 - 1/31/2021 11:00pm - Created Binary Search Tree Class and Add method
 * 1.0.0 - 1/31/2021 11:30pm - Created Contains method
 * 1.1.0 - 2/01/2021 11:40pm - Created FindMaximumValue method
+* 1.2.0 - 2/02/2021 1:00am - Created Breadth First Traversal method
 
 ### Attribution
 * [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/)
