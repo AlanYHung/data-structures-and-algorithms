@@ -11,16 +11,19 @@
 * Within your Binary Search Tree class, include a Binary Tree Property. Upon instantiation, an empty Binary Tree should be created.
   * Define a method called add that takes in a value as an argument and adds it to the Binary Tree in sorted order.
   * Define a method called contains that takes in a value as an argument and returns a boolean of whether or not the value is contained within the tree.
+* Within your K-ary Tree class, include a List of Node References for the Children and a value to set the maximum number of children.
 
 ### Challenge Summary Part 2
 * Write a method called Find-Maximum-Value that searches through a Binary Tree and returns the largest value in the tree.
 * Write a method called BreadthFirst that traverses a tree using Breadth First Search and returns a List of Node Values in Search order.
+* Write a method called FizzBuzz that copies a K-ary tree of int and replaces converts it to a tree of string.
 
 ### Challenge Description
 * Create a Binary Tree with a working preorder, inorder, and postorder traversal methods
 * Create a Binary Search Tree with a working add and contains method.
 * Create a method called FindMaximumValue in the Binary Tree class and have it return the largest value in the tree.
 * Create a method called BreadthFirst in the Binary Tree class and have it return a list of all values using BFS traversal order.
+* Create a method called FizzBuzz tree that converts an int tree to a string and replaces all values divisible by 3 and 5 by "Fizz", "Buzz", and "FizzBuzz".
 
 ### Approach & Efficiency
 * Create a Node Class with value and pointer to the left and right child.
@@ -40,10 +43,12 @@
   * Efficiency: O(n)
 * __BreadthFirst__ Takes in no parameters, but returns a List of nodes in Breadth First Traverse order.
   * Efficiency: O(n)
+* __FizzBuzz__ Takes in a K-ary Tree of type int, but returns a a K-ary Tree of type string.
 
 ### Solution
 * [Find Max Value in Tree - Whiteboard](./tree/tree/assets/FindMaxValueWhiteboard.PNG)
 * [Breadth First Traversal - Whiteboard](./tree/tree/assets/BreadthFirstCC17wb.PNG)
+* [K-ary Tree / FizzBuzz Tree - Whiteboard](./tree/tree/assets/k-ary-fizzbuzz.png)
 
 ### Example
 ![Append - Whiteboard](./tree/tree/assets/ExampleProgram1.PNG)

@@ -13,11 +13,26 @@ namespace tree
     {
       List<string> treeList = new List<string>();
       List<int> bstList = new List<int>();
+      char forwardSlash = '/';
+      char BackSlash = '\\';
 
       PopulateBinaryTree();
       PopulateBinarySearchTree();
 
-
+      Console.WriteLine("Tree Used in Demo:\n");
+      Console.WriteLine("                 25");
+      Console.WriteLine("                {0}  {1}", forwardSlash, BackSlash);
+      Console.WriteLine("               {0}    {1}", forwardSlash, BackSlash);
+      Console.WriteLine("              {0}      {1}", forwardSlash, BackSlash);
+      Console.WriteLine("             {0}        {1}", forwardSlash, BackSlash);
+      Console.WriteLine("            {0}          {1}", forwardSlash, BackSlash);
+      Console.WriteLine("           {0}            {1}", forwardSlash, BackSlash);
+      Console.WriteLine("          15             50");
+      Console.WriteLine("         {0}  {1}           {2}  {3}", forwardSlash, BackSlash, forwardSlash, BackSlash);
+      Console.WriteLine("        {0}    {1}         {2}    {3}", forwardSlash, BackSlash, forwardSlash, BackSlash);
+      Console.WriteLine("      10      22     35      70");
+      Console.WriteLine("      {0}{1}      {2}{3}     {4}{5}      {6}{7}", forwardSlash, BackSlash, forwardSlash, BackSlash, forwardSlash, BackSlash, forwardSlash, BackSlash);
+      Console.WriteLine("     4  12  18  24 31  44  66  90\n\n");
 
       // This Section is for Pre-Order Traverse
       treeList = myTree.PreOrder(myTree.Root, treeList);

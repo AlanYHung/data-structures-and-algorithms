@@ -68,3 +68,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 1. [Binary Tree](./c-sharp/tree/README.md)
   * [Trees - FindMaximumValue](./c-sharp/tree/tree/tree/assets/FindMaxValueWhiteboard.PNG)
   * [Trees - BreadFirstTraverse](./c-sharp/tree/tree/tree/assets/BreadthFirstCC17wb.PNG)
+  * [Trees - K-ary Tree / FizzBuzz Tree](./c-sharp/tree/tree/tree/assets/k-ary-fizzbuzz.png)
