@@ -69,4 +69,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
   * [Trees - FindMaximumValue](./c-sharp/tree/tree/tree/assets/FindMaxValueWhiteboard.PNG)
   * [Trees - BreadFirstTraverse](./c-sharp/tree/tree/tree/assets/BreadthFirstCC17wb.PNG)
   * [Trees - K-ary Tree / FizzBuzz Tree](./c-sharp/tree/tree/tree/assets/k-ary-fizzbuzz.png)
-6. [Insertion Sort Blog](./c-sharp/insertionSort/insertionSort/insertionSort/README.md)
+6. [Insertion Sort Blog](./c-sharp/InsertionSort/InsertionSort/InsertionSort/blog/BLOG.md)
