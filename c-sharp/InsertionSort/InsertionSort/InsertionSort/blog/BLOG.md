@@ -20,12 +20,12 @@
 
 ## __Trace__
 
-![](./assets/Step1.PNG)
-![](./assets/Step2.PNG)
-![](./assets/Step3.PNG)
-![](./assets/Step4.PNG)
-![](./assets/Step5.PNG)
-![](./assets/Step6.PNG)
+![](../assets/Step1.PNG)
+![](../assets/Step2.PNG)
+![](../assets/Step3.PNG)
+![](../assets/Step4.PNG)
+![](../assets/Step5.PNG)
+![](../assets/Step6.PNG)
 
 ## Efficiency
   * Time: O(n^2)
