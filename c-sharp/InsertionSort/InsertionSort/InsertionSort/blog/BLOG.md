@@ -20,12 +20,12 @@
 
 ## __Trace__
 
-![](./insertionSort/insertionSort/assets/Step1.PNG)
-![](./insertionSort/insertionSort/assets/Step2.PNG)
-![](./insertionSort/insertionSort/assets/Step3.PNG)
-![](./insertionSort/insertionSort/assets/Step4.PNG)
-![](./insertionSort/insertionSort/assets/Step5.PNG)
-![](./insertionSort/insertionSort/assets/Step6.PNG)
+![](./assets/Step1.PNG)
+![](./assets/Step2.PNG)
+![](./assets/Step3.PNG)
+![](./assets/Step4.PNG)
+![](./assets/Step5.PNG)
+![](./assets/Step6.PNG)
 
 ## Efficiency
   * Time: O(n^2)
