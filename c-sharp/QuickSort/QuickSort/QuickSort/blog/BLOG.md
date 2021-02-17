@@ -40,7 +40,7 @@ element list.  Then it merges all the sorted smaller lists into a single sorted 
 ```
 
 ## __Trace__
-![](../assets/quickSort.PNG)
+![](../assets/quickSort.png)
 
 ## Efficiency
   * Time: O(Nlogn)
