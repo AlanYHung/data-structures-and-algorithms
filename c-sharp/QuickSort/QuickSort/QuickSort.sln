@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickSort", "QuickSort\QuickSort.csproj", "{88FAFADC-24B1-4CF7-8AC2-940152970DB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{95EB0E30-24A0-493D-BF02-25F0C15583D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88FAFADC-24B1-4CF7-8AC2-940152970DB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88FAFADC-24B1-4CF7-8AC2-940152970DB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88FAFADC-24B1-4CF7-8AC2-940152970DB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88FAFADC-24B1-4CF7-8AC2-940152970DB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95EB0E30-24A0-493D-BF02-25F0C15583D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95EB0E30-24A0-493D-BF02-25F0C15583D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95EB0E30-24A0-493D-BF02-25F0C15583D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95EB0E30-24A0-493D-BF02-25F0C15583D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4927DEA-9A12-44B3-AB4E-A3BCF05744AC}
+	EndGlobalSection
+EndGlobal
