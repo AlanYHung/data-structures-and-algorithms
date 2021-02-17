@@ -2,7 +2,7 @@ using System;
 
 namespace MergeSort
 {
-  class Program
+  public class Program
   {
     static void Main(string[] args)
     {
@@ -33,7 +33,7 @@ namespace MergeSort
       return newArray;
     }
 
-    static void MergeSort(int[] array)
+    public static void MergeSort(int[] array)
     {
       Console.WriteLine();
       Console.Write("Original Array: ");
