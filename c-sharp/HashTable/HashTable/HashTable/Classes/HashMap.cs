@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace HashTable.Classes
 {
@@ -108,6 +109,32 @@ namespace HashTable.Classes
           Console.WriteLine("Null");
         }
       }
+    }
+
+    public string FirstRepeatedWord(string inputString)
+    {
+      if(inputString.Length > 2)
+      {
+        inputString = inputString.ToLower();
+        string[] splitString = inputString.Split(" ");
+
+        if(splitString.Length > 1)
+        {
+          for(int i = 0; i < splitString.Length; i++)
+          {
+            splitString[i] = Regex.Replace(splitString[i], @"[\W*]", "");
+
+            if(Contains(splitString[i]))
+            {
+              return splitString[i];
+            }
+
+            Add(splitString[i], splitString[i]);
+          }
+        }
+      }
+
+      return null;
     }
   }// end of class
 }// end of namespace
