@@ -16,6 +16,11 @@ namespace HashTable.Classes
 
     private int Hash(string key)
     {
+      if(key.Equals(""))
+      {
+        return -1;
+      }
+
       int hashValue = 0;
       char[] letters = key.ToCharArray();
 
@@ -32,20 +37,23 @@ namespace HashTable.Classes
     {
       int hashKey = Hash(key);
 
-      if(Map[hashKey] == null)
+      if(hashKey > -1)
       {
-        Map[hashKey] = new LinkedList<KeyValuePair<string, string>>();
-      }
+        if (Map[hashKey] == null)
+        {
+          Map[hashKey] = new LinkedList<KeyValuePair<string, string>>();
+        }
 
-      KeyValuePair<string, string> entry = new KeyValuePair<string, string>(key, value);
-      Map[hashKey].AddFirst(entry);
+        KeyValuePair<string, string> entry = new KeyValuePair<string, string>(key, value);
+        Map[hashKey].AddFirst(entry);
+      }
     }
 
     public string Get(string key)
     {
       int hashKey = Hash(key);
 
-      if (Map != null)
+      if (Map != null && hashKey > -1)
       {
         if (Map[hashKey] != null)
         {
@@ -70,7 +78,7 @@ namespace HashTable.Classes
     {
       int hashKey = Hash(key);
 
-      if(Map != null)
+      if(Map != null && hashKey > -1)
       {
         if(Map[hashKey] != null)
         {
