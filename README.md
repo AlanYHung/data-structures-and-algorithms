@@ -72,3 +72,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 6. [Insertion Sort Blog](./c-sharp/InsertionSort/InsertionSort/InsertionSort/blog/BLOG.md)
 7. [Merge Sort Blog](./c-sharp/MergeSort/MergeSort/MergeSort/blog/BLOG.md)
 8. [Quick Sort Blog](./c-sharp/QuickSort/QuickSort/QuickSort/blog/BLOG.md)
+9. [Quick Sort Blog](./c-sharp/HashTable/HashTable/HashTable/assets/repeated-word.png)
