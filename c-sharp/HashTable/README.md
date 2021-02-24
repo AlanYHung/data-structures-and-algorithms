@@ -12,10 +12,12 @@
 
 ### Challenge Summary Part 2
 * Write a method called FirstRepeatedWord that given a long string will parse the string and return the first word in the string that shows up more than once.  It returns null if no duplicates are found.
+* Write a method called TreeIntersection that given 2 trees will traverse both trees and return a list of all collision values
 
 ### Challenge Description
 * Create a Hash Map with a working hash, add, get, and contains methods
-* Create a FirstRepeatedWord method that returns the first word to repeat more than once.
+* Create FirstRepeatedWord method that returns the first word to repeat more than once.
+* Create TreeIntersection method that returns a list of intersecting values of two different trees
 
 ### Approach & Efficiency
 * Create a Hash Map Class with an array that stores linked list key value pair strings.
@@ -29,9 +31,12 @@
   * Efficiency: O(log n)
 * __FirstRepeatedWord__ Takes in a long string, parses the string, then hashes the words to a Hash Map.  It then returns the first duplicate word it finds or it returns null.
   * Efficiency: O(n)
+* __TreeIntersection__ Takes in 2 separate trees, then traverses both trees and returns a list of all intersecting values.  Returns null or empty list for edge cases.
+  * Efficiency: O(n)
 
 ### Solution
 * [First Repeated Word - Whiteboard](./HashTable/HashTable/assets/repeated-word.png)
+* [Intersecting Trees - Whiteboard](./HashTable/HashTable/assets/TreeIntersection.PNG)
 
 ### Example
 ![Append - Whiteboard](./HashTable/HashTable/assets/ExampleProgram.PNG)
