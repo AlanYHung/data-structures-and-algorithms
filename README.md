@@ -74,3 +74,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 8. [Quick Sort Blog](./c-sharp/QuickSort/QuickSort/QuickSort/blog/BLOG.md)
 9. [Hash Table](./c-sharp/HashTable/README.md)
   * [First Repeated Word](./c-sharp/HashTable/HashTable/HashTable/assets/repeated-word.png)
+  * [Tree Intersection](./c-sharp/HashTable/HashTable/HashTable/assets/TreeIntersection.PNG)
