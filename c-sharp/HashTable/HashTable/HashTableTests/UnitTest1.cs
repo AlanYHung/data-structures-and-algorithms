@@ -2,6 +2,7 @@ using HashTable;
 using HashTable.Classes;
 using System;
 using Xunit;
+using tree.binarytree.classes;
 
 namespace HashTableTests
 {
@@ -71,6 +72,32 @@ namespace HashTableTests
     {
       Program.MyMap = new HashMap(20);
       Assert.Null(Program.MyMap.FirstRepeatedWord(value));
+    }
+
+    /// <summary>
+    /// This tests that TreeIntersection works
+    /// </summary>
+    [Fact]
+    public void TestTreeIntersectionHappyPath()
+    {
+      Program.PopulateTrees();
+      Program.CollisionList = Program.TreeIntersection(Program.TreeOne, Program.TreeTwo, 20);
+      Assert.True(Program.CollisionList.Contains("100"));
+      Assert.True(Program.CollisionList.Contains("160"));
+      Assert.True(Program.CollisionList.Contains("125"));
+      Assert.True(Program.CollisionList.Contains("175"));
+      Assert.True(Program.CollisionList.Contains("200"));
+      Assert.True(Program.CollisionList.Contains("350"));
+      Assert.True(Program.CollisionList.Contains("500"));
+    }
+
+    /// <summary>
+    /// This tests an Edge Case of Tree Intersection
+    /// </summary>
+    [Fact]
+    public void TestTreeIntersectionWithEmptyTrees()
+    {
+      Assert.Null(Program.TreeIntersection(null, null, 20));
     }
   }
 }
