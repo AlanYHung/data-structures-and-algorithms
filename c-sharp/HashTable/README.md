@@ -13,11 +13,13 @@
 ### Challenge Summary Part 2
 * Write a method called FirstRepeatedWord that given a long string will parse the string and return the first word in the string that shows up more than once.  It returns null if no duplicates are found.
 * Write a method called TreeIntersection that given 2 trees will traverse both trees and return a list of all collision values
+* Write a method called LeftJoin that given 2 HashMaps will mimic the functionality of a SQL Left Join Operation and return a list of the resulting data
 
 ### Challenge Description
 * Create a Hash Map with a working hash, add, get, and contains methods
 * Create FirstRepeatedWord method that returns the first word to repeat more than once.
 * Create TreeIntersection method that returns a list of intersecting values of two different trees
+* Create LeftJoin method that returns a list of combined data between 2 hash maps
 
 ### Approach & Efficiency
 * Create a Hash Map Class with an array that stores linked list key value pair strings.
@@ -33,10 +35,13 @@
   * Efficiency: O(n)
 * __TreeIntersection__ Takes in 2 separate trees, then traverses both trees and returns a list of all intersecting values.  Returns null or empty list for edge cases.
   * Efficiency: O(n)
+* __LeftJoin__ Takes in 2 separate hash maps, then combines the data in both maps and returns a list of all resulting combined data.  Returns empty list for edge cases.
+  * Efficiency: O(Nlogn)
 
 ### Solution
 * [First Repeated Word - Whiteboard](./HashTable/HashTable/assets/repeated-word.png)
 * [Intersecting Trees - Whiteboard](./HashTable/HashTable/assets/TreeIntersection.PNG)
+* [Left Join - Whiteboard](./HashTable/HashTable/assets/left-sort.png)
 
 ### Example
 ![Append - Whiteboard](./HashTable/HashTable/assets/ExampleProgram.PNG)
@@ -48,6 +53,8 @@
 * 0.8.0 - 2/22/2021 11:33pm - Created Contains Method
 * 1.0.0 - 2/22/2021 11:33pm - Created Program to test all Methods
 * 1.1.0 - 2/22/2021 11:33pm - Created FirstRepeatedWord Method
+* 1.2.0 - 2/22/2021 11:14pm - Created TreeIntersection Method
+* 1.3.0 - 2/22/2021 12:04am - Created LeftJoin Method
 
 ### Attribution
 * [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/)
