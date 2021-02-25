@@ -8,6 +8,7 @@ namespace HashTable
   public class Program
   {
     public static HashMap MyMap;
+    public static HashMap RightMap;
     public static BinarySearchTree<string> TreeOne = new BinarySearchTree<string>();
     public static BinarySearchTree<string> TreeTwo = new BinarySearchTree<string>();
     public static List<string> CollisionList;
@@ -16,15 +17,18 @@ namespace HashTable
     {
       Populate();
       MyMap.Print();
+      Console.WriteLine();
       Console.WriteLine(MyMap.Get("Elephant"));
       Console.WriteLine(MyMap.Get("Kangaroo"));
       Console.WriteLine(MyMap.Get("Giraffe"));
       Console.WriteLine(MyMap.Get("Iguana"));
+      Console.WriteLine();
       Console.WriteLine(MyMap.Contains("Elephant"));
       Console.WriteLine(MyMap.Contains("Unicorn"));
       Console.WriteLine(MyMap.Contains("Frog"));
       Console.WriteLine(MyMap.Contains("Iguana"));
 
+      Console.WriteLine();
       MyMap = new HashMap(20);
       Console.WriteLine(MyMap.FirstRepeatedWord("Welcome ???@@##$ to#$% Geeks%$^ for$%^& Geeks"));
       MyMap = new HashMap(20);
@@ -36,12 +40,32 @@ namespace HashTable
 
       PopulateTrees();
       CollisionList = TreeIntersection(TreeOne, TreeTwo, 20);
-
+      Console.WriteLine();
       Console.Write("[");
       foreach (string value in CollisionList)
       {
         Console.Write(" {0} ", value);
       }
+      Console.WriteLine("]");
+      Console.WriteLine();
+
+      PopulateLeftMap();
+      MyMap.Print();
+      PopulateRightMap();
+      RightMap.Print();
+      Console.WriteLine("[");
+      foreach (var item in MyMap.LeftJoin(RightMap))
+      {
+        Console.Write("\t[ {0}", item.Key);
+
+        foreach (var item2 in item.Value)
+        {
+          Console.Write(" {0} ", item2);
+        }
+
+        Console.WriteLine("],");
+      }
+
       Console.WriteLine("]");
     }
 
@@ -61,6 +85,26 @@ namespace HashTable
       MyMap.Add("Newt", "71");
       MyMap.Add("Octopus", "116");
       MyMap.Add("Snake", "73");
+    }
+
+    public static void PopulateLeftMap()
+    {
+      MyMap = new HashMap(20);
+      MyMap.Add("fond", "enamored");
+      MyMap.Add("wrath", "angered");
+      MyMap.Add("diligent", "employed");
+      MyMap.Add("outfit", "garb");
+      MyMap.Add("guide", "usher");
+    }
+
+    public static void PopulateRightMap()
+    {
+      RightMap = new HashMap(20);
+      RightMap.Add("fond", "averse");
+      RightMap.Add("wrath", "delight");
+      RightMap.Add("diligent", "idle");
+      RightMap.Add("guide", "follow");
+      RightMap.Add("flow", "jam");
     }
 
     public static void PopulateTrees()

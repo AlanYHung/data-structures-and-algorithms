@@ -3,6 +3,7 @@ using HashTable.Classes;
 using System;
 using Xunit;
 using tree.binarytree.classes;
+using System.Collections.Generic;
 
 namespace HashTableTests
 {
@@ -99,5 +100,47 @@ namespace HashTableTests
     {
       Assert.Null(Program.TreeIntersection(null, null, 20));
     }
-  }
-}
+
+    /// <summary>
+    /// Tests that LeftJoin Returns the correct final output
+    /// </summary>
+    [Fact]
+    public void TestLeftJoinHappyPath()
+    {
+      Program.PopulateLeftMap();
+      Program.PopulateRightMap();
+      List<KeyValuePair<string, List<string>>> test = Program.MyMap.LeftJoin(Program.RightMap);
+      string[] array1 = new string[] { "angered", "delight" };
+      string[] array2 = new string[] { "employed", "idle" };
+      string[] array3 = new string[] { "garb", "NULL" };
+      string[] array4 = new string[] { "usher", "follow" };
+      string[] array5 = new string[] { "enamored", "averse" };
+      string[][] value = new string[][] { array1, array2, array3, array4, array5 };
+      string[] key = new string[] { "wrath", "diligent", "outfit", "guide", "fond" };
+
+      int keyCount = 0;
+      foreach (var item in test)
+      {
+        Assert.Equal(key[keyCount], item.Key);
+
+        int valueCount = 0;
+        foreach (var listvalue in item.Value)
+        {
+          Assert.Equal(value[keyCount][valueCount++], listvalue);
+        }
+
+        keyCount++;
+      }
+    }
+
+    /// <summary>
+    /// This tests that a null map will return an empty list
+    /// </summary>
+    [Fact]
+    public void TestLeftJoinWithEmptyTable()
+    {
+      HashMap testMap = new HashMap(20);
+      Assert.Equal(0, testMap.LeftJoin(Program.RightMap).Count);
+    }
+  } //end of class
+} // end of namespace
